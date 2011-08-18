@@ -1,0 +1,974 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/Users/rcurrie/workspace/bry/server/server.coffee",
+			"settings":
+			{
+				"buffer_size": 3175,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/rcurrie/workspace/bry/server/import.coffee",
+			"settings":
+			{
+				"buffer_size": 995,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/rcurrie/Documents/Other/boodarg.md",
+			"settings":
+			{
+				"buffer_size": 27389,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/Users/rcurrie/workspace/bry/server/facility.coffee",
+			"settings":
+			{
+				"buffer_size": 525,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 95,
+		"selected_items":
+		[
+			[
+				"space",
+				"Indentation: Convert to Spaces"
+			]
+		],
+		"width": 392
+	},
+	"console":
+	{
+		"height": 0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/rcurrie/Documents/Other/boodarg.md",
+		"/Users/rcurrie/Documents/Notes/todo.md",
+		"/Users/rcurrie/workspace/dwellable/lib/house_fields.rb",
+		"/Users/rcurrie/workspace/dwellable/lib/area_resolver.rb",
+		"/Users/rcurrie/workspace/dwellable/app/models/area.rb",
+		"/Users/rcurrie/workspace/longink/client/client.coffee",
+		"/Users/rcurrie/Documents/Divorce/divorce_notes.md",
+		"/Users/rcurrie/Documents/Notes/kids_log.md",
+		"/Users/rcurrie/workspace/bry/data/ca.nox.100.csv",
+		"/Users/rcurrie/Downloads/kulesa-chat-local-d99d18f/messages-mongodb.coffee",
+		"/Users/rcurrie/workspace/bry/server/facility.coffee",
+		"/Users/rcurrie/workspace/bry/server/config.default.coffee",
+		"/Users/rcurrie/workspace/bry/server/server.coffee",
+		"/Users/rcurrie/Downloads/kulesa-chat-local-d99d18f/app.coffee",
+		"/Users/rcurrie/workspace/bry/README.md",
+		"/Users/rcurrie/workspace/bry/server/import.coffee",
+		"/Users/rcurrie/workspace/bry/server/node_modules/mongodb/lib/mongodb/collection.js",
+		"/Users/rcurrie/workspace/bry/server/node_modules/mongodb/lib/mongodb/commands/db_command.js",
+		"/Users/rcurrie/workspace/bry/server/node_modules/mongoose/lib/mongoose/collection.js",
+		"/Users/rcurrie/workspace/bry/server/run_dev_server.coffee",
+		"/Users/rcurrie/workspace/bry/client/lib/phonegap-0.9.3.js",
+		"/Users/rcurrie/Documents/Notes/dwellable_notes.md",
+		"/Users/rcurrie/workspace/dwellable/data/hilton_head/map.txt",
+		"/Users/rcurrie/workspace/dwellable/data/hilton_head/cook.csv",
+		"/Users/rcurrie/workspace/dwellable/data/hilton_head/resorts.txt",
+		"/Users/rcurrie/workspace/dwellable/bin/cook",
+		"/Users/rcurrie/workspace/dwellable/data/hilton_head/beach-property.sinew",
+		"/Users/rcurrie/workspace/dwellable/bin/deletehh",
+		"/Users/rcurrie/workspace/dwellable/bin/inject",
+		"/Users/rcurrie/workspace/dwellable/bin/take_out_the_trash",
+		"/Users/rcurrie/Library/Application Support/Sublime Text 2/Packages/User/Global.sublime-settings",
+		"/Users/rcurrie/Library/Application Support/Sublime Text 2/Packages/Default/Global.sublime-settings",
+		"/Users/rcurrie/Library/Application Support/Sublime Text 2/Packages/User/Distraction Free.sublime-settings",
+		"/Users/rcurrie/workspace/dwellable/data/lake_tahoe/map.txt",
+		"/Users/rcurrie/workspace/dwellable/app/models/house.rb",
+		"/Users/rcurrie/workspace/dwellable/app/controllers/main_controller.rb",
+		"/Users/rcurrie/workspace/dwellable/data/hilton_head/vacationrentals411.sinew",
+		"/Users/rcurrie/workspace/dwellable/lib/parsing.rb",
+		"/Users/rcurrie/workspace/dwellable/data/hilton_head/seashorehhi.sinew",
+		"/Users/rcurrie/workspace/dwellable/data/hilton_head/palmettosands.sinew",
+		"/Users/rcurrie/workspace/dwellable/data/hilton_head/islandgetaway.sinew",
+		"/Users/rcurrie/workspace/dwellable/data/hilton_head/hiltonheadvacationrentals.sinew",
+		"/Users/rcurrie/workspace/dwellable/data/hilton_head/hhivacations.sinew",
+		"/Users/rcurrie/workspace/dwellable/data/hilton_head/goodevacationrentals.sinew",
+		"/Users/rcurrie/workspace/dwellable/data/hilton_head/800beachme.sinew",
+		"/Users/rcurrie/workspace/dwellable/data/colorado/map.txt",
+		"/Users/rcurrie/workspace/dwellable/data/hilton_head/hhivacations.csv",
+		"/Users/rcurrie/workspace/dwellable/bin/cook_one",
+		"/Users/rcurrie/workspace/dwellable/data/san_diego/socalvacationrentals.sinew",
+		"/Users/rcurrie/workspace/dwellable/data/san_diego/socalvacationrentals.csv",
+		"/Users/rcurrie/workspace/dwellable/data/outer_banks/southernshores.csv",
+		"/Users/rcurrie/Documents/Other/boodarg.txt",
+		"/Users/rcurrie/workspace/dwellable/blog/001_welcome.html.md",
+		"/Users/rcurrie/Documents/Divorce/divorce_notes.txt",
+		"/Users/rcurrie/Library/Application Support/Sublime Text 2/Packages/User/Base File.sublime-settings",
+		"/Users/rcurrie/Library/Application Support/Sublime Text 2/Packages/Default/Base File.sublime-settings",
+		"/Users/rcurrie/Desktop/temp.markdown",
+		"/Users/rcurrie/Library/Application Support/Sublime Text 2/Packages/User/Markdown.sublime-settings",
+		"/Users/rcurrie/Documents/Notes/todo.txt",
+		"/Users/rcurrie/Documents/Notes/dwellable_notes.txt",
+		"/Users/rcurrie/workspace/dwellable/lib/curler.rb",
+		"/Users/rcurrie/workspace/dwellable/bin/sinew",
+		"/Users/rcurrie/workspace/dwellable/blog/1/index.html.md",
+		"/Users/rcurrie/workspace/dwellable/lib/geocoder.rb",
+		"/Users/rcurrie/workspace/dwellable/data/hilton_head/hiltonheadrbo.sinew",
+		"/Users/rcurrie/workspace/dwellable/data/hilton_head/goodevacationrentals.csv",
+		"/Users/rcurrie/Documents/Dwellable/vrbo taxonomy and counts.txt",
+		"/Users/rcurrie/workspace/dwellable/data/colorado/resorts.txt",
+		"/Users/rcurrie/Documents/Notes/kids_log.txt",
+		"/Users/rcurrie/Library/Application Support/Sublime Text 2/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/rcurrie/workspace/vrbo/vrbo_taxonomy.txt",
+		"/Users/rcurrie/workspace/dwellable/data/colorado/resorts.sinew",
+		"/Users/rcurrie/workspace/trx/trx_notes.txt",
+		"/Users/rcurrie/workspace/dwellable/config/locales/en.yml",
+		"/Users/rcurrie/DwellableDropbox/Dropbox/sinew/www.seashorehhi.com/DesktopDefault.aspx,page_num=1,PageID=18276,foo=4",
+		"/Users/rcurrie/DwellableDropbox/Dropbox/sinew/www.hhivacations.com/property.asp,rental=65",
+		"/Users/rcurrie/DwellableDropbox/Dropbox/sinew/www.hhivacations.com/rental-rates.asp,rental=499",
+		"/Users/rcurrie/DwellableDropbox/Dropbox/sinew/www.hhivacations.com/property.asp,rental=6",
+		"/Users/rcurrie/Desktop/bad_areas.txt",
+		"/Users/rcurrie/DwellableDropbox/Dropbox/sinew/www.hhivacations.com/property.asp,rental=87",
+		"/Users/rcurrie/DwellableDropbox/Dropbox/sinew/www.hhivacations.com/property-location,rental=5",
+		"/Users/rcurrie/workspace/dwellable/data/colorado/findrentals.sinew",
+		"/Users/rcurrie/workspace/dwellable/app/views/application/area.html.haml",
+		"/Users/rcurrie/workspace/dwellable/data/colorado/vacationroost.sinew",
+		"/Users/rcurrie/workspace/dwellable/data/cape_cod/cook.csv",
+		"/Users/rcurrie/workspace/dwellable/data/colorado/alpineproperty.sinew",
+		"/Users/rcurrie/workspace/dwellable/data/colorado/10kvacationrentals.sinew",
+		"/Users/rcurrie/workspace/dwellable/data/colorado/cook.csv",
+		"/Users/rcurrie/workspace/dwellable/lib/cook_lib.rb",
+		"/Users/rcurrie/workspace/dwellable/data/hilton_head/800beachme.csv",
+		"/Users/rcurrie/workspace/dwellable/data/colorado/vacationrentals411.sinew",
+		"/Users/rcurrie/workspace/dwellable/data/colorado/findrentals.csv",
+		"/Users/rcurrie/workspace/dwellable/data/maui/drhmaui.sinew",
+		"/Users/rcurrie/workspace/dwellable/data/colorado/alpineproperty.csv",
+		"/Users/rcurrie/workspace/dwellable/data/hilton_head/islandgetaway.csv",
+		"/Users/rcurrie/workspace/dwellable/config/initializers/rails_ext.rb",
+		"/Users/rcurrie/workspace/dwellable/data/colorado/vacationroost.csv",
+		"/Users/rcurrie/DwellableDropbox/Dropbox/sinew/www.findrentals.com/44765.html",
+		"/Users/rcurrie/workspace/dwellable/data/colorado/alwaysonvacation.csv",
+		"/Users/rcurrie/workspace/dwellable/data/colorado/10kvacationrentals.csv",
+		"/Users/rcurrie/workspace/dwellable/data/san_diego/beachfrontonly.sinew",
+		"/Users/rcurrie/workspace/dwellable/data/hilton_head/seashorehhi.csv",
+		"/Volumes/NEXUSONE/LOST.DIR/317941",
+		"/Users/rcurrie/workspace/dwellable/data/hilton_head/resortia.sinew",
+		"/Users/rcurrie/workspace/dwellable/lib/inject_lib.rb",
+		"/Users/rcurrie/workspace/dwellable/data/hilton_head/hiltonheadvacationrentals.csv",
+		"/Users/rcurrie/workspace/dwellable/data/colorado/durango-colorado-vacations.sinew",
+		"/Users/rcurrie/workspace/dwellable/data/colorado/alwaysonvacation.sinew",
+		"/Users/rcurrie/workspace/dwellable/lib/image_tools.rb",
+		"/Users/rcurrie/Documents/Other/comms_next.txt",
+		"/Users/rcurrie/workspace/dwellable/data/hilton_head/hiltonheadrentals.sinew",
+		"/Users/rcurrie/workspace/dwellable/data/maui/drhmaui_pricing.txt",
+		"/Users/rcurrie/Documents/Other/kloonarb/comms_next.txt",
+		"/Users/rcurrie/Documents/Other/kloonarb/Divorce/divorce_notes.txt",
+		"/Users/rcurrie/Documents/Notes/hacking_notes.txt",
+		"/private/tmp/ls.txt",
+		"/Users/rcurrie/Documents/Other/kloonarb/flaherty.txt",
+		"/Users/rcurrie/Documents/Notes/rc_quotes.txt",
+		"/Users/rcurrie/Library/Application Support/Firefox/Profiles/1y8vflc5.default/places.sqlite",
+		"/Users/rcurrie/workspace/dwellable/data/colorado/resortia.sinew",
+		"/Users/rcurrie/workspace/dwellable/data/cape_cod/vacationhomerentals.sinew",
+		"/Users/rcurrie/workspace/dwellable/data/colorado/vacationhomerentals.sinew",
+		"/Library/Preferences/com.apple.TimeMachine.plist",
+		"/Users/rcurrie/workspace/dwellable/app/controllers/application_controller.rb",
+		"/Users/rcurrie/Library/Application Support/Sublime Text 2/Packages/Text/Plain text.tmLanguage",
+		"/Users/rcurrie/Desktop/temp.csv",
+		"/Users/rcurrie/workspace/dwellable/app/models/photo.rb",
+		"/Users/rcurrie/workspace/dwellable/app/controllers/admin/areas_controller.rb"
+	],
+	"find":
+	{
+		"height": 33
+	},
+	"find_in_files":
+	{
+		"height": 88,
+		"include_history":
+		[
+			"",
+			"*.rb",
+			"*.js",
+			"*",
+			"*.js",
+			"*.csv",
+			"*.rb",
+			"",
+			"*.rb",
+			"*.csv",
+			"*.sinew",
+			"*.csv",
+			"*.sinew",
+			"",
+			"*.rb",
+			"",
+			"%select",
+			"",
+			"*.haml",
+			"[^(csv)]",
+			""
+		],
+		"location_history":
+		[
+			"/Users/rcurrie/workspace/dwellable",
+			"/Users/rcurrie/workspace/bry",
+			"/Users/rcurrie/workspace/bry/server/node_modules",
+			"/Users/rcurrie/workspace/bry/server/node_modules/mongodb",
+			"/Users/rcurrie/workspace/bry/server/node_modules/mongoose",
+			"/Users/rcurrie/workspace/dwellable/data/hilton_head",
+			"/Users/rcurrie/workspace/dwellable",
+			"/Users/rcurrie/workspace/dwellable/data/hilton_head",
+			"/Users/rcurrie/workspace/dwellable/data/colorado",
+			"/Users/rcurrie/workspace/dwellable/data/hilton_head",
+			"/Users/rcurrie/workspace/dwellable/data",
+			"/Users/rcurrie/workspace/dwellable/data/hilton_head",
+			"/Users/rcurrie/workspace/dwellable/data",
+			"/Users/rcurrie/workspace/dwellable/lib",
+			"/Users/rcurrie/workspace/dwellable",
+			"/Users/rcurrie/workspace/dwellable/assets",
+			"/Users/rcurrie/workspace/dwellable",
+			"/Users/rcurrie/workspace/dwellable/app",
+			"/Users/rcurrie/workspace/dwellable/bin",
+			"/Users/rcurrie/workspace/dwellable/lib",
+			"/Users/rcurrie/workspace/dwellable/app",
+			"/Users/rcurrie/workspace/dwellable/lib",
+			"/Users/rcurrie/workspace/dwellable/app",
+			"/Users/rcurrie/workspace/dwellable",
+			"/Users/rcurrie/workspace/dwellable/app",
+			"/Users/rcurrie/workspace/dwellable",
+			"/Users/rcurrie/workspace/dwellable/data/colorado",
+			"/Users/rcurrie/Library/Application Support/Sublime Text 2/Packages/Ruby",
+			"<open folders>"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"find",
+			"length",
+			"within",
+			"to",
+			"json",
+			"geo",
+			"lat",
+			"geo",
+			"within",
+			"ensure",
+			"rim",
+			"ensureIndex",
+			"ensureindex",
+			"runcommand",
+			"geo",
+			"GEO2D",
+			"2d",
+			"geo",
+			"ensureIndex",
+			"vicky",
+			"6565",
+			"pasha",
+			"cristia",
+			"vicky",
+			"pasha",
+			"anr",
+			"rob@amp",
+			"rob",
+			"roblox",
+			"resorts",
+			"def resorts",
+			"resort",
+			"wind",
+			"tenn",
+			"bradley beach",
+			"1852BEACHSIDETENNIS",
+			"5SANDHILLCRANE",
+			"608BARRINGTONPARK",
+			"chase",
+			"inden",
+			"roblox",
+			"village",
+			"islandgetaway",
+			"resorts",
+			"detect_resorts",
+			"area_resolver",
+			"AreaResolver.new",
+			"print_tree",
+			"resort",
+			"parent =",
+			".new",
+			"parent",
+			"include?",
+			"index",
+			"keys",
+			"titles",
+			"\"|\"",
+			"split",
+			"@path",
+			".path",
+			"break",
+			"leaves",
+			"resolve_resorts",
+			"puts",
+			"leaves",
+			"key_to_node",
+			".each",
+			"key_to_node",
+			"resort",
+			"resolve_areas",
+			"resolve",
+			"resolve_areas",
+			"resort",
+			"jewl",
+			"jewle",
+			"pasha",
+			"brit",
+			"paral",
+			"christine",
+			"soc",
+			"ehealth",
+			"print",
+			"paths_to_tree",
+			"print",
+			"|hilton head resort",
+			",hilton head resort",
+			"resolve_resorts",
+			"apple",
+			"local",
+			"local://",
+			"local",
+			"chip",
+			"mediator",
+			"mediators",
+			"chip",
+			"459-398-propertypicture",
+			"map.txt",
+			"amazon",
+			"paypal",
+			"park",
+			"godaddy",
+			"door",
+			"mint",
+			"door",
+			"mediators",
+			"divorce",
+			"vicky parry",
+			"house",
+			"hosue",
+			"variable",
+			"featured",
+			"features",
+			"park",
+			"resolve_res",
+			"beds",
+			"lego",
+			"hilton",
+			"islandg",
+			"key",
+			"google",
+			"geocode",
+			"resolve_areas",
+			"resolve_resorts",
+			"turtlelaneclub",
+			"resolve_resorts",
+			"beds",
+			"deb",
+			"green heron 24"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer": false,
+		"whole_word": false,
+		"wrap": true
+	},
+	"folders":
+	{
+		"mount_points":
+		[
+			"/Users/rcurrie/workspace/bry",
+			"/Users/rcurrie/Downloads/kulesa-chat-local-d99d18f",
+			"/Users/rcurrie/workspace/dwellable",
+			"/Users/rcurrie/workspace/longink"
+		]
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/Users/rcurrie/workspace/bry/server/server.coffee",
+					"settings":
+					{
+						"buffer_size": 3175,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								909,
+								909
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Coffeescript/CoffeeScript.tmLanguage"
+						},
+						"translation.x": 0,
+						"translation.y": 0,
+						"zoom_level": 1
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/rcurrie/workspace/bry/server/import.coffee",
+					"settings":
+					{
+						"buffer_size": 995,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								503,
+								503
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Coffeescript/CoffeeScript.tmLanguage"
+						},
+						"translation.x": 0,
+						"translation.y": 0,
+						"zoom_level": 1
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Users/rcurrie/Documents/Other/boodarg.md",
+					"settings":
+					{
+						"buffer_size": 27389,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								27387,
+								27387
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+						},
+						"translation.x": 0,
+						"translation.y": 27766,
+						"zoom_level": 1
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/Users/rcurrie/workspace/bry/server/facility.coffee",
+					"settings":
+					{
+						"buffer_size": 525,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								193,
+								207
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Coffeescript/CoffeeScript.tmLanguage"
+						},
+						"translation.x": 0,
+						"translation.y": 0,
+						"zoom_level": 1
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0
+	},
+	"input":
+	{
+		"height": 30
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0,
+			1
+		],
+		"rows":
+		[
+			0,
+			1
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0,
+		"selected_items":
+		[
+			[
+				"faci",
+				"bry/server/facility.coffee"
+			],
+			[
+				"impor",
+				"bry/server/import.coffee"
+			],
+			[
+				"im",
+				"server/import.coffee"
+			],
+			[
+				"imp",
+				"server/import.coffee"
+			],
+			[
+				"parsi",
+				"lib/parsing.rb"
+			],
+			[
+				"area",
+				"lib/area_resolver.rb"
+			],
+			[
+				"cook",
+				"bin/cook"
+			],
+			[
+				"beach-p",
+				"data/hilton_head/beach-property.sinew"
+			],
+			[
+				"dele",
+				"bin/deletehh"
+			],
+			[
+				"take_",
+				"bin/take_out_the_trash"
+			],
+			[
+				"inject",
+				"bin/inject"
+			],
+			[
+				"resorts",
+				"data/hilton_head/resorts.txt"
+			],
+			[
+				"map.tx",
+				"data/hilton_head/map.txt"
+			],
+			[
+				"map",
+				"data/lake_tahoe/map.txt"
+			],
+			[
+				"pars",
+				"lib/parsing.rb"
+			],
+			[
+				"vaca",
+				"data/hilton_head/vacationrentals411.sinew"
+			],
+			[
+				"main",
+				"app/controllers/main_controller.rb"
+			],
+			[
+				"house",
+				"app/models/house.rb"
+			],
+			[
+				"parsing",
+				"lib/parsing.rb"
+			],
+			[
+				"socal",
+				"data/san_diego/socalvacationrentals.sinew"
+			],
+			[
+				"800",
+				"data/hilton_head/800beachme.sinew"
+			],
+			[
+				"so",
+				"data/outer_banks/southernshores.csv"
+			],
+			[
+				"cook_",
+				"bin/cook_one"
+			],
+			[
+				"hhi",
+				"data/hilton_head/hhivacations.csv"
+			],
+			[
+				"cook.",
+				"data/hilton_head/cook.csv"
+			],
+			[
+				"resorts.txt",
+				"data/hilton_head/resorts.txt"
+			],
+			[
+				"map.txt",
+				"data/hilton_head/map.txt"
+			],
+			[
+				"hou",
+				"lib/house_fields.rb"
+			],
+			[
+				"coo",
+				"bin/cook"
+			],
+			[
+				"sinew",
+				"bin/sinew"
+			],
+			[
+				"curler",
+				"lib/curler.rb"
+			],
+			[
+				"geo",
+				"lib/geocoder.rb"
+			],
+			[
+				"island",
+				"data/hilton_head/islandgetaway.sinew"
+			],
+			[
+				"sin",
+				"bin/sinew"
+			],
+			[
+				"good",
+				"data/hilton_head/goodevacationrentals.sinew"
+			],
+			[
+				"parsin",
+				"lib/parsing.rb"
+			],
+			[
+				"resor",
+				"data/colorado/resorts.sinew"
+			],
+			[
+				"resort",
+				"data/colorado/resorts.txt"
+			],
+			[
+				"en.y",
+				"config/locales/en.yml"
+			],
+			[
+				"sea",
+				"data/hilton_head/seashorehhi.sinew"
+			],
+			[
+				"find",
+				"data/colorado/findrentals.sinew"
+			],
+			[
+				"resorts.",
+				"data/colorado/resorts.txt"
+			],
+			[
+				"hiva",
+				"data/hilton_head/hhivacations.sinew"
+			],
+			[
+				"80",
+				"data/hilton_head/800beachme.sinew"
+			],
+			[
+				"8",
+				"data/hilton_head/800beachme.sinew"
+			],
+			[
+				"vacationrental",
+				"data/colorado/vacationrentals411.sinew"
+			],
+			[
+				"vacationroo",
+				"data/colorado/vacationroost.sinew"
+			],
+			[
+				"findren",
+				"data/colorado/findrentals.csv"
+			],
+			[
+				"alpin",
+				"data/colorado/alpineproperty.csv"
+			],
+			[
+				"vacationro",
+				"data/colorado/vacationroost.sinew"
+			],
+			[
+				"islan",
+				"data/hilton_head/islandgetaway.sinew"
+			],
+			[
+				"en",
+				"config/locales/en.yml"
+			],
+			[
+				"resorts.si",
+				"data/colorado/resorts.sinew"
+			],
+			[
+				"vacationr",
+				"data/colorado/vacationroost.csv"
+			],
+			[
+				"en.",
+				"config/locales/en.yml"
+			],
+			[
+				"seas",
+				"data/hilton_head/seashorehhi.sinew"
+			],
+			[
+				"beach-",
+				"data/hilton_head/beach-property.sinew"
+			],
+			[
+				"fin",
+				"data/colorado/findrentals.sinew"
+			],
+			[
+				"vacat",
+				"data/colorado/vacationrentals411.sinew"
+			],
+			[
+				"hil",
+				"data/hilton_head/hiltonheadvacationrentals.sinew"
+			],
+			[
+				"imagetools",
+				"lib/image_tools.rb"
+			],
+			[
+				"image",
+				"lib/image_tools.rb"
+			],
+			[
+				"imageto",
+				"lib/image_tools.rb"
+			],
+			[
+				"injec",
+				"lib/inject_lib.rb"
+			],
+			[
+				"mapt",
+				"data/hilton_head/map.txt"
+			],
+			[
+				"vrbo",
+				"/Users/rcurrie/workspace/vrbo/vrbo_taxonomy.txt"
+			],
+			[
+				"resorts.tx",
+				"data/colorado/resorts.txt"
+			],
+			[
+				"map.",
+				"data/colorado/map.txt"
+			],
+			[
+				"vactio",
+				"data/colorado/vacationhomerentals.sinew"
+			],
+			[
+				"vacation",
+				"data/cape_cod/vacationhomerentals.sinew"
+			],
+			[
+				"cookli",
+				"lib/cook_lib.rb"
+			],
+			[
+				"imat",
+				"lib/image_tools.rb"
+			],
+			[
+				"photo",
+				"app/models/photo.rb"
+			],
+			[
+				"cookl",
+				"lib/cook_lib.rb"
+			],
+			[
+				"phot",
+				"app/models/photo.rb"
+			],
+			[
+				"dwellable_",
+				"/Users/rcurrie/Documents/Notes/dwellable_notes.txt"
+			],
+			[
+				"alpine",
+				"data/colorado/alpineproperty.sinew"
+			],
+			[
+				"summit",
+				"data/colorado/summitcove.sinew"
+			],
+			[
+				"area.",
+				"app/views/application/area.html.haml"
+			],
+			[
+				"app.js",
+				"public/javascripts/app.js"
+			],
+			[
+				"area.rb",
+				"app/models/area.rb"
+			],
+			[
+				"resort.txt",
+				"dwellable/data/colorado/resorts.txt"
+			],
+			[
+				"cook.csv",
+				"dwellable/data/cape_cod/cook.csv"
+			],
+			[
+				"resorts.sin",
+				"dwellable/data/colorado/resorts.sinew"
+			],
+			[
+				"",
+				"/Users/rcurrie/workspace/vrbo/vrbo_taxonomy.txt"
+			],
+			[
+				"hack",
+				"/Users/rcurrie/Documents/Notes/hacking_notes.txt"
+			],
+			[
+				"area_reo",
+				"dwellable/lib/area_resolver.rb"
+			],
+			[
+				"resorts.t",
+				"dwellable/data/colorado/resorts.txt"
+			],
+			[
+				"cocook",
+				"dwellable/data/colorado/cook.csv"
+			],
+			[
+				"summ",
+				"dwellable/data/colorado/summitcove.sinew"
+			],
+			[
+				"durang",
+				"dwellable/data/colorado/durango-colorado-vacations.sinew"
+			],
+			[
+				"mark",
+				"Packages/Markdown/Markdown.tmLanguage"
+			],
+			[
+				"dur",
+				"dwellable/data/colorado/durango-colorado-vacations.sinew"
+			],
+			[
+				"durango",
+				"data/colorado/durango-colorado-vacations.sinew"
+			],
+			[
+				"bin/cook",
+				"bin/cook"
+			],
+			[
+				"coklib",
+				"lib/cook_lib.rb"
+			]
+		],
+		"width": 0
+	},
+	"select_project":
+	{
+		"height": 0,
+		"selected_items":
+		[
+		],
+		"width": 0
+	},
+	"show_minimap": true,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 270,
+	"status_bar_visible": true
+}
