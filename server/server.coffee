@@ -56,19 +56,20 @@ httpServer = http.createServer (request, response) ->
           response.end()
       httpRequest.end()
 
-    when '/loc'
-      center = [37.93767, -122.39617]
-      distance = 1
+    when '/facilities'
+      center = [parseFloat(command.query.lat), parseFloat(command.query.lon)]
+      distance = parseFloat(command.query.dist)
       radius = distance / 112.63
       query = {"loc" : {"\$within" : {"\$center" : [center, radius]}}}
       limit = {limit: 100, sort: [["_id", -1]] }
       console.log "Querying: " + center[0].toString() + " : " + center[1].toString() + ", " + distance.toString()
       FacilityModel.collection.find query, limit, (error, cursor) ->
         cursor.toArray (error, results) ->
+          console.log "Found #{results.length}\n"
           response.writeHead 200, {'Content-Type': 'text/html'}
-          response.write "Found #{results.length} near the center\n"
+          response.write JSON.stringify(results)
           response.end()
-
+    
     else 
       request.addListener 'end', ->
         console.log("Servicing static request to " + request.url)

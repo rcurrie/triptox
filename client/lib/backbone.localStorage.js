@@ -1,3 +1,10 @@
+/**
+ * Backbone localStorage Adapter v1.0
+ * https://github.com/jeromegn/Backbone.localStorage
+ *
+ * Date: Sun Aug 14 2011 09:53:55 -0400
+ */
+
 // A simple module to replace `Backbone.sync` with *localStorage*-based
 // persistence. Models are given GUIDS, and saved into a JSON object. Simple
 // as that.
@@ -51,7 +58,7 @@ _.extend(Store.prototype, {
 
   // Return the array of all models currently in storage.
   findAll: function() {
-    return _.map(this.records, function(id){return JSON.parse(localStorage.getItem(this.name+"-"+id))}, this);
+    return _.map(this.records, function(id){return JSON.parse(localStorage.getItem(this.name+"-"+id));}, this);
   },
 
   // Delete a model from `this.data`, returning it.
@@ -66,7 +73,15 @@ _.extend(Store.prototype, {
 
 // Override `Backbone.sync` to use delegate to the model or collection's
 // *localStorage* property, which should be an instance of `Store`.
-Backbone.sync = function(method, model, success, error) {
+Backbone.sync = function(method, model, options, error) {
+
+  // Backwards compatibility with Backbone <= 0.3.3
+  if (typeof options == 'function') {
+    options = {
+      success: options,
+      error: error
+    };
+  }
 
   var resp;
   var store = model.localStorage || model.collection.localStorage;
@@ -78,10 +93,9 @@ Backbone.sync = function(method, model, success, error) {
     case "delete":  resp = store.destroy(model);                           break;
   }
 
-	// HACK: Fixed to match latest Backbone function calling parameters
   if (resp) {
-    success(resp);
+    options.success(resp);
   } else {
-    error("Record not found");
+    options.error("Record not found");
   }
 };
