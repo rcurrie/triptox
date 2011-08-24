@@ -9,6 +9,11 @@ HTML5 Mobile app that shows polution emitters on your route
 
 ## Features
 
+## Motivation
+http://www.epa.gov/appsfortheenvironment/
+
+http://www.facebook.com/event.php?eid=233890659987331
+
 ## Data Source
 http://www.epa.gov/air/emissions/where.htm
 
@@ -21,3 +26,4 @@ http://www.epa.gov/air/emissions/where.htm
 * Open a browser to http://localhost:8000
 
 ## ToDo
+* Link off to website with details on the emission, health affects etc...

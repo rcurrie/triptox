@@ -97,5 +97,5 @@ Backbone.sync = function(method, model, options, error) {
     options.success(resp);
   } else {
     options.error("Record not found");
-  }
+  }  
 };

@@ -7,14 +7,10 @@ $ ->
     model: FacilityModel
     localStorage: new Store "facilities"
 
-    # downloadFacility: (link, title) =>
-    #   # JSONP so we can get around the cross domain restrictions for HTML5
-    #   console.log 'GETing ' + title + ' ' + link
-    #   $.getJSON "http://viewtext.org/api/text?url=" + link + "&callback=?", (data) ->
-    #     console.log 'Got ' + link
-    #     facilities.create {title: title, link: link, timeStamp: new Date(), content: data.content}
-
-    getFacilities: (callback) =>
+    comparator: (facility) ->
+      -1 * facility.get "tons"
+    
+    getFacilities: (callback) =>     
       console.log 'Getting facilities'
       $.ajax {
         # relative url unless running inside phonegap
@@ -25,18 +21,17 @@ $ ->
         success: (data) =>
           console.log 'Received nearby facilities'
           console.log data
-          data.each (facility) ->
-            console.log facility._id
-            # link = $(this).find('link').text()
-            # title = $(this).find('title').text()
-            # if not facilities.detect ((facility) -> facility.get("link") is link)
-            #   console.log 'New facility: ' + title
-            #   facilities.downloadFacility link, title
+          for item in data
+            if not facilities.detect ((facility) -> facility.get("_id") is item._id)
+              console.log 'New facility: ' + item.name
+              facilities.create item
           callback()
       }  
 
-  facilities = new FacilityCollection()
+  facilities = new FacilityCollection
   facilities.fetch()
+  facilities.each (facility) ->
+    console.log facility
     
   #==============================================================================
   # Views
@@ -44,6 +39,7 @@ $ ->
     template: _.template($('#facility-detail-view-template').html())
     render: =>
       $('#facility-title').text(@model.get('name'))
+      $('#facility-original-button').attr('href', "http://yahoo.com")
       @el.html(@template({facility : @model}))
 
   facilityDetailView = new FacilityDetailView {el: $('#facility-detail-view')}
@@ -69,7 +65,7 @@ $ ->
       
   facilityListView = new FacilityListView {collection: facilities, el: $ "#facility-list-view"}
   facilityListView.render()
-  
+
   #==============================================================================
   # Controllers
   $('#refresh-button').click ->
@@ -93,3 +89,5 @@ $ ->
     if i > 0
       facilityDetailView.model = facilities.at(i-1)
       facilityDetailView.render()
+
+  # $('#map_canvas').gmap('refresh')

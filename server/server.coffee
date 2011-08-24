@@ -7,10 +7,10 @@ FacilityModel = mongoose.model "facility"
 
 
 # REMIND: Move into import
-FacilityModel.collection.ensureIndex [[ "location", "2d"  ]], () -> {}
+FacilityModel.collection.ensureIndex [[ "loc", "2d"  ]], () -> {}
 
-# FacilityModel.collection.indexInformation (error, doc) ->
-#   console.log doc
+FacilityModel.collection.indexInformation (error, doc) ->
+  console.log doc
 
 FacilityModel.collection.count (err, count) ->
   console.log "#{count} facilities in the database"
@@ -57,6 +57,7 @@ httpServer = http.createServer (request, response) ->
       httpRequest.end()
 
     when '/facilities'
+      console.log command.query
       center = [parseFloat(command.query.lat), parseFloat(command.query.lon)]
       distance = parseFloat(command.query.dist)
       radius = distance / 112.63
