@@ -61,19 +61,54 @@ $ ->
       "click a#get-directions-button" : "createMap"
     }
 
+    gmap = null
+    directionsService = null
+    directionsDisplay = null
+    
     createMap: (e) ->
-      $('#map-canvas').gmap({'callback': @mapCreated()})
-
-    mapCreated: =>
+      # $('#map-canvas').gmap({'callback': @mapCreated()})
       $.mobile.changePage("#map-page")
-      # Also works with: var yourStartLatLng = '59.3426606750, 18.0736160278';
-      yourStartLatLng = new google.maps.LatLng(59.3426606750, 18.0736160278);
-      $('#map-canvas').gmap({'center': yourStartLatLng});
+      $.mobile.loadingMessage = 'Getting routes...'
+      $.mobile.pageLoading false
 
-      params = { "origin": $("#from").val(), "destination": $("#to").val(), "travelMode": google.maps.DirectionsTravelMode.DRIVING }
+      if gmap
+        console.log "map already exists"
+      else
+        latlng = new google.maps.LatLng(59.3426606750, 18.0736160278);
+        gmap = new google.maps.Map(document.getElementById("map-canvas"), {zoom: 8, center: latlng, mapTypeId: google.maps.MapTypeId.ROADMAP})
+        directionsService = new google.maps.DirectionsService()
+        directionsDisplay = new google.maps.DirectionsRenderer()
+        directionsDisplay.setMap(gmap)
+
+
+    
+      params = { "origin": $("#from").val(), "destination": $("#to").val(), "travelMode": google.maps.DirectionsTravelMode.DRIVING, provideRouteAlternatives: true }
       console.log params
-      $("#map-canvas").gmap "displayDirections", params, { "panel": document.getElementById("directions")}, (response, status) =>
-        console.log "got directions response #{status}"
+      directionsService.route params, (response, status) ->
+        if status is google.maps.DirectionsStatus.OK
+          directionsDisplay.setDirections(response)
+          directionsDisplay.setRouteIndex(1)
+
+          console.log "Found #{response.routes.length} routes"
+          for loc in response.routes[0].overview_path
+            console.log loc
+
+          $.mobile.loadingMessage = 'Analyzing routes...'
+
+          console.log "Sending route to server for analysis"
+          $.ajax '/routes',
+            type: 'POST'
+            data: JSON.stringify response.routes
+            dataType: 'html'
+            error: (jqXHR, textStatus, errorThrown) ->
+              console.log "Error sending route to server #{textStatus}"
+            success: (data) ->
+              console.log "Got data from server based on route"
+              console.log data
+              $.mobile.pageLoading true
+
+        else
+          console.log "Problems getting directions: #{status}"
 
 
   

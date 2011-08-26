@@ -47,6 +47,19 @@ httpServer = http.createServer (request, response) ->
       response.write 'Server up and running\n'
       response.end()
 
+    when '/routes'
+      console.log command.query
+      body = '';
+      request.on 'data', (data) ->
+        body += data
+      request.on 'end', ->
+        routes = JSON.parse body
+        console.log "Found #{routes.length} routes"
+
+      response.writeHead 200, {'Content-Type': 'text/html'}
+      response.write 'Got some routes\n'
+      response.end()
+
     when '/articles'
       console.log 'Serving up articles'
       httpRequest = http.get { host: 'news.ycombinator.com', port: 80, path: '/rss'}, (httpResponse) ->
