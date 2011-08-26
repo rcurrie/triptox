@@ -10,67 +10,47 @@
 	<link rel="apple-touch-startup-image" href="startup.png"/>
 	<link rel="stylesheet" href="lib/jquery.mobile-1.0b2/jquery.mobile-1.0b2.min.css"/>
 
-
 	<script type="text/javascript" src="lib/jquery-1.6.2.min.js"></script>
   <script type="text/javascript" src="lib/jquery.mobile-1.0b2/jquery.mobile-1.0b2.min.js"></script>
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+  <script type="text/javascript" src="lib/jquery.fn.gmap.js"></script>
 	
 	<script src="lib/json2.js"></script>
 	<script src="lib/underscore-min.js"></script>
 	<script src="lib/backbone-min.js"></script>
   <script src="lib/backbone.localStorage.js"></script>
 	
-  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-  <script type="text/javascript" src="lib/jquery.fn.gmap.js"></script>
-  
   <script src="lib/coffee-script.js" type="text/javascript" charset="utf-8"></script>
 	<script src="client.coffee" type="text/coffeescript" charset="utf-8"></script>
 
 	<title>breathway</title> 
 </head> 
 <body> 
-
-<div id="directions-page" data-role="page">
-  <div id="directions-content" data-role="content">
-  Hello!!!
+  <div id="from-to-page" data-role="page">
+    <div data-role="header" data-add-back-btn="false">
+      <h1>Breathway</h1>
+    </div>
+    <div data-role="content"> 
+      <p>
+        <label for="from">From</label>
+        <input id="from" type="text" value="Santa Cruz, CA" />
+      </p>
+      <p>
+        <label for="to">To</label>
+        <input id="to" type="text" value="Palo Alto, CA" />
+      </p>
+    </div>
+    <a id="get-directions-button" href="#" data-role="button" data-icon="search">Get directions</a>
   </div>
-</div>
 
-<div id="facility-list-page" data-role="page">
-  <div data-role="header" data-position="fixed">
-    <a id="clear-button" href="#" data-icon="delete">Clear</a>
-    <h1>breathway</h1>
-    <a id="refresh-button" href="#" data-icon="refresh" class="ui-btn-right">Reload</a>
+  <div id="map-page" data-role="page">
+    <div data-role="header" data-add-back-btn="true">
+      <h1>Breathway</h1>
+    </div>
+    <div data-role="content"> 
+      <div id="map-canvas" style="height:300px;"></div>
+    </div>
+    <div id="directions"></div>
   </div>
-  <div id="facility-list-view" data-role="content">
-  </div>
-</div>
-
-<div id="facility-detail-page" data-role="page" data-add-back-btn="true">
-  <div data-role="header" data-position="fixed">
-    <h1 id="facility-title"></h1>
-    <a id="facility-original-button" href="#" target=”_blank” data-icon="arrow-r" class="ui-btn-right">Original</a>
-  </div>
-  <div id="facility-detail-view" data-role="content" data-theme="a">
-  </div>
-</div>
-
-<!-- Templates -->
-<script id="facility-list-view-template" type="text/template">
-    <ul data-role="listview" data-filter="false" data-theme="a">
-      <% facilities.each(function(facility) { %>
-        <li><a href="#" data-cid="<%= facility.cid %>">
-          <%= facility.get('name') %>
-        </a></li>
-      <% }); %>
-    </ul>
-</script>
-
-<script id="facility-detail-view-template" type="text/template">
-  <%= facility.get('name') %><p>
-  <%= facility.get('address') %><p>
-  <%= facility.get('sic_description') %>
-  <%= facility.get('tons').toString() %> tons of <%= facility.get('pollutant') %><p>
-</script>
-
 </body>
 </html>

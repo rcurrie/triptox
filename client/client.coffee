@@ -30,64 +30,78 @@ $ ->
 
   facilities = new FacilityCollection
   facilities.fetch()
-  facilities.each (facility) ->
-    console.log facility
-    
+  # facilities.each (facility) ->
+  #   console.log facility
+
   #==============================================================================
   # Views
-  class FacilityDetailView extends Backbone.View
-    template: _.template($('#facility-detail-view-template').html())
-    render: =>
-      $('#facility-title').text(@model.get('name'))
-      $('#facility-original-button').attr('href', "http://yahoo.com")
-      @el.html(@template({facility : @model}))
-
-  facilityDetailView = new FacilityDetailView {el: $('#facility-detail-view')}
+  # class MapPage extends Backbone.View
+  #   template: _.template($('#facility-list-view-template').html())
+  #   events : {
+  #     "click" : "handleShowFacilityDetail"
+  #   }
+  #   constructor: ->
+  #     super
+  #     _.bindAll(this, 'render');
+  #     @collection.bind 'all', @render
       
-  class FacilityListView extends Backbone.View
-    template: _.template($('#facility-list-view-template').html())
+  #   handleShowFacilityDetail: (e) ->
+  #     facilityDetailView.model = this.collection.getByCid(e.target.getAttribute("data-cid"))
+  #     facilityDetailView.render()
+  #     $.mobile.changePage("#facility-detail-page")
+      
+  #   render: =>
+  #     @el.html(@template({facilities : @collection}))
+  #     @el.find('ul[data-role]').listview()
+      
+  # mapPage = new MapPage {el: $ "#map-page"}
+
+  class FromToPage extends Backbone.View
     events : {
-      "click" : "handleShowFacilityDetail"
+      "click a#get-directions-button" : "createMap"
     }
-    constructor: ->
-      super
-      _.bindAll(this, 'render');
-      @collection.bind 'all', @render
-      
-    handleShowFacilityDetail: (e) ->
-      facilityDetailView.model = this.collection.getByCid(e.target.getAttribute("data-cid"))
-      facilityDetailView.render()
-      $.mobile.changePage("#facility-detail-page")
-      
-    render: =>
-      @el.html(@template({facilities : @collection}))
-      @el.find('ul[data-role]').listview()
-      
-  facilityListView = new FacilityListView {collection: facilities, el: $ "#facility-list-view"}
-  facilityListView.render()
 
-  #==============================================================================
-  # Controllers
-  $('#refresh-button').click ->
-    $.mobile.loadingMessage = 'Refreshing facilities...'
-    $.mobile.pageLoading false
-    facilities.getFacilities -> $.mobile.pageLoading true
+    createMap: (e) ->
+      $('#map-canvas').gmap({'callback': @mapCreated()})
 
-  $('#clear-button').click ->
-    # .each doesn't work, only deletes a handfull at a time, why?
-    # facilities.each (facility) -> facility.destroy()
-    facilities.first().destroy() while facilities.length
+    mapCreated: =>
+      $.mobile.changePage("#map-page")
+      # Also works with: var yourStartLatLng = '59.3426606750, 18.0736160278';
+      yourStartLatLng = new google.maps.LatLng(59.3426606750, 18.0736160278);
+      $('#map-canvas').gmap({'center': yourStartLatLng});
 
-  $('#facility-detail-view').bind 'swipeleft', ->
-    i = facilities.indexOf(facilityDetailView.model)
-    if i < facilities.length-1
-      facilityDetailView.model = facilities.at(i+1)
-      facilityDetailView.render()
+      params = { "origin": $("#from").val(), "destination": $("#to").val(), "travelMode": google.maps.DirectionsTravelMode.DRIVING }
+      console.log params
+      $("#map-canvas").gmap "displayDirections", params, { "panel": document.getElementById("directions")}, (response, status) =>
+        console.log "got directions response #{status}"
+
+
   
-  $('#facility-detail-view').bind 'swiperight', ->
-    i = facilities.indexOf(facilityDetailView.model)
-    if i > 0
-      facilityDetailView.model = facilities.at(i-1)
-      facilityDetailView.render()
+  fromToPage = new FromToPage {el: $('#from-to-page')}
+      
+  #==============================================================================
+  # Controllers  
+  # console.log "getting current position"
+  # console.log $("#map-canvas")
+  # $("#map-canvas").gmap "getCurrentPosition", (position, status) ->
+  #   console.log "getCurrentPosition returned"
+  #   if status is "OK"
+  #     console.log "Position appears OK"
+  #     latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
+  #     $("#map-canvas").gmap("get", "map").panTo(latlng)
+  #     $("#map-canvas").gmap "search", { "location": latlng }, (results, status) ->
+  #       if status is "OK"
+  #         $("#from").val(results[0].formatted_address)
+  #   else
+  #     alert("Unable to get current position")
 
-  # $('#map_canvas').gmap('refresh')
+  # $("#map_canvas_1").gmap({"center": "59.3426606750, 18.0736160278"})
+  # $("#submit").click ->
+  #   console.log "got click!"
+  #   $("#map_canvas_1").gmap "displayDirections", { "origin": $("#from").val(), "destination": $("#to").val(), "travelMode": google.maps.DirectionsTravelMode.DRIVING }, { "panel": document.getElementById("directions")}, (response, status) =>
+  #     console.log "got directions response"
+  #     if status is "OK"
+  #       $("#results").show()
+  #     else
+  #       $("#results").hide()
+  #   return false
