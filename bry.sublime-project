@@ -11,15 +11,39 @@
 			"file": "/Users/rcurrie/workspace/bry/server/server.coffee",
 			"settings":
 			{
-				"buffer_size": 2689,
+				"buffer_size": 3080,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/Users/rcurrie/workspace/bry/server/facility.coffee",
+			"file": "/Users/rcurrie/Documents/Notes/todo.md",
 			"settings":
 			{
-				"buffer_size": 525,
+				"buffer_size": 1072,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/rcurrie/Documents/Other/boodarg.md",
+			"settings":
+			{
+				"buffer_size": 27443,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/Users/rcurrie/workspace/bry/client/client.coffee",
+			"settings":
+			{
+				"buffer_size": 5439,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/rcurrie/workspace/bry/client/index.html",
+			"settings":
+			{
+				"buffer_size": 2330,
 				"line_ending": "Unix"
 			}
 		},
@@ -32,18 +56,10 @@
 			}
 		},
 		{
-			"file": "/Users/rcurrie/workspace/bry/client/index.html",
+			"file": "/Users/rcurrie/Documents/Divorce/divorce_notes.md",
 			"settings":
 			{
-				"buffer_size": 2295,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/rcurrie/workspace/bry/client/client.coffee",
-			"settings":
-			{
-				"buffer_size": 3449,
+				"buffer_size": 16196,
 				"line_ending": "Unix"
 			}
 		}
@@ -75,30 +91,42 @@
 	},
 	"file_history":
 	[
+		"/Users/rcurrie/Documents/Archive/AirGoMo/dwm.old/docs/ToDo.txt",
+		"/Users/rcurrie/Documents/Divorce/divorce_notes.md",
+		"/Users/rcurrie/Documents/Other/boodarg.md",
+		"/Users/rcurrie/Dropbox/workspace/bry/server/import.coffee",
+		"/Users/rcurrie/Downloads/jquery-ui-map-3.0-alpha/demos/basic-example.html",
+		"/Users/rcurrie/Dropbox/workspace/bry/client/client.coffee",
+		"/Users/rcurrie/Dropbox/workspace/bry/client/index.html",
+		"/Users/rcurrie/Dropbox/Documents/Notes/todo.md",
+		"/Users/rcurrie/Downloads/jquery-ui-map-3.0-alpha/web/min/jquery.fn.gmap.min.js",
+		"/Users/rcurrie/workspace/bry/client/lib/backbone.localStorage.js",
+		"/Users/rcurrie/workspace/bry/client/client.coffee",
+		"/Users/rcurrie/workspace/bry/server/server.coffee",
+		"/Users/rcurrie/workspace/bry/server/facility.coffee",
+		"/Users/rcurrie/workspace/bry/server/import.coffee",
+		"/Users/rcurrie/Dropbox/workspace/bry/bry.sublime-project",
+		"/Users/rcurrie/workspace/bry/client/index.html",
+		"/Users/rcurrie/Library/Application Support/Sublime Text 2/Packages/User/Base File.sublime-settings",
+		"/Users/rcurrie/workspace/bry/README.md",
+		"/Users/rcurrie/workspace/longink/client/client.coffee",
+		"/Users/rcurrie/Documents/Notes/todo.md",
 		"/Users/rcurrie/workspace/longink/client/index.html",
 		"/Users/rcurrie/workspace/bry/server/run_dev_server.coffee",
 		"/Users/rcurrie/workspace/bry/client/client.manifest",
 		"/Users/rcurrie/Downloads/kulesa-chat-local-d99d18f/app.coffee",
 		"/Users/rcurrie/workspace/longink/server/server.coffee",
-		"/Users/rcurrie/Documents/Divorce/divorce_notes.md",
-		"/Users/rcurrie/workspace/bry/server/import.coffee",
-		"/Users/rcurrie/Documents/Other/boodarg.md",
 		"/Users/rcurrie/workspace/bry/.gitignore",
 		"/Users/rcurrie/workspace/longink/.gitignore",
 		"/Users/rcurrie/workspace/dwellable/.gitignore",
-		"/Users/rcurrie/Documents/Notes/todo.md",
 		"/Users/rcurrie/Reference/Emacs/peepcode-027-emacs-code/emacs-starter-kit/TODO",
 		"/Users/rcurrie/workspace/dwellable/lib/house_fields.rb",
 		"/Users/rcurrie/workspace/dwellable/lib/area_resolver.rb",
 		"/Users/rcurrie/workspace/dwellable/app/models/area.rb",
-		"/Users/rcurrie/workspace/longink/client/client.coffee",
 		"/Users/rcurrie/Documents/Notes/kids_log.md",
 		"/Users/rcurrie/workspace/bry/data/ca.nox.100.csv",
 		"/Users/rcurrie/Downloads/kulesa-chat-local-d99d18f/messages-mongodb.coffee",
-		"/Users/rcurrie/workspace/bry/server/facility.coffee",
 		"/Users/rcurrie/workspace/bry/server/config.default.coffee",
-		"/Users/rcurrie/workspace/bry/server/server.coffee",
-		"/Users/rcurrie/workspace/bry/README.md",
 		"/Users/rcurrie/workspace/bry/server/node_modules/mongodb/lib/mongodb/collection.js",
 		"/Users/rcurrie/workspace/bry/server/node_modules/mongodb/lib/mongodb/commands/db_command.js",
 		"/Users/rcurrie/workspace/bry/server/node_modules/mongoose/lib/mongoose/collection.js",
@@ -136,7 +164,6 @@
 		"/Users/rcurrie/Documents/Other/boodarg.txt",
 		"/Users/rcurrie/workspace/dwellable/blog/001_welcome.html.md",
 		"/Users/rcurrie/Documents/Divorce/divorce_notes.txt",
-		"/Users/rcurrie/Library/Application Support/Sublime Text 2/Packages/User/Base File.sublime-settings",
 		"/Users/rcurrie/Library/Application Support/Sublime Text 2/Packages/Default/Base File.sublime-settings",
 		"/Users/rcurrie/Desktop/temp.markdown",
 		"/Users/rcurrie/Library/Application Support/Sublime Text 2/Packages/User/Markdown.sublime-settings",
@@ -191,18 +218,7 @@
 		"/Users/rcurrie/workspace/dwellable/data/colorado/durango-colorado-vacations.sinew",
 		"/Users/rcurrie/workspace/dwellable/data/colorado/alwaysonvacation.sinew",
 		"/Users/rcurrie/workspace/dwellable/lib/image_tools.rb",
-		"/Users/rcurrie/Documents/Other/comms_next.txt",
-		"/Users/rcurrie/workspace/dwellable/data/hilton_head/hiltonheadrentals.sinew",
-		"/Users/rcurrie/workspace/dwellable/data/maui/drhmaui_pricing.txt",
-		"/Users/rcurrie/Documents/Other/kloonarb/comms_next.txt",
-		"/Users/rcurrie/Documents/Other/kloonarb/Divorce/divorce_notes.txt",
-		"/Users/rcurrie/Documents/Notes/hacking_notes.txt",
-		"/private/tmp/ls.txt",
-		"/Users/rcurrie/Documents/Other/kloonarb/flaherty.txt",
-		"/Users/rcurrie/Documents/Notes/rc_quotes.txt",
-		"/Users/rcurrie/Library/Application Support/Firefox/Profiles/1y8vflc5.default/places.sqlite",
-		"/Users/rcurrie/workspace/dwellable/data/colorado/resortia.sinew",
-		"/Users/rcurrie/workspace/dwellable/data/cape_cod/vacationhomerentals.sinew"
+		"/Users/rcurrie/Documents/Other/comms_next.txt"
 	],
 	"find":
 	{
@@ -270,9 +286,19 @@
 	},
 	"find_state":
 	{
-		"case_sensitive": true,
+		"case_sensitive": false,
 		"find_history":
 		[
+			"link",
+			"original",
+			"back",
+			"new Store",
+			"articles",
+			".create",
+			".get",
+			"facilitys",
+			"	",
+			"updateFromHN",
 			"Article",
 			"Facility",
 			"facilitys",
@@ -390,17 +416,7 @@
 			"door",
 			"mint",
 			"door",
-			"mediators",
-			"divorce",
-			"vicky parry",
-			"house",
-			"hosue",
-			"variable",
-			"featured",
-			"features",
-			"park",
-			"resolve_res",
-			"beds"
+			"mediators"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -408,6 +424,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"  "
 		],
 		"reverse": false,
 		"show_context": true,
@@ -419,16 +436,13 @@
 	{
 		"mount_points":
 		[
-			"/Users/rcurrie/workspace/bry",
-			"/Users/rcurrie/Downloads/kulesa-chat-local-d99d18f",
-			"/Users/rcurrie/workspace/dwellable",
-			"/Users/rcurrie/workspace/longink"
+			"/Users/rcurrie/workspace/bry"
 		]
 	},
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -436,15 +450,15 @@
 					"file": "/Users/rcurrie/workspace/bry/server/server.coffee",
 					"settings":
 					{
-						"buffer_size": 2689,
+						"buffer_size": 3080,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2318,
-								2318
+								2616,
+								2616
 							]
 						],
 						"settings":
@@ -452,25 +466,77 @@
 							"syntax": "Packages/Coffeescript/CoffeeScript.tmLanguage"
 						},
 						"translation.x": 0,
-						"translation.y": 532,
+						"translation.y": 736,
 						"zoom_level": 1
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "/Users/rcurrie/workspace/bry/server/facility.coffee",
+					"file": "/Users/rcurrie/Documents/Notes/todo.md",
 					"settings":
 					{
-						"buffer_size": 525,
+						"buffer_size": 1072,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								525,
-								525
+								74,
+								74
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+						},
+						"translation.x": 0,
+						"translation.y": 0,
+						"zoom_level": 1
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Users/rcurrie/Documents/Other/boodarg.md",
+					"settings":
+					{
+						"buffer_size": 27443,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								27361,
+								27376
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+						},
+						"translation.x": 0,
+						"translation.y": 27898,
+						"zoom_level": 1
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/Users/rcurrie/workspace/bry/client/client.coffee",
+					"settings":
+					{
+						"buffer_size": 5439,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
 							]
 						],
 						"settings":
@@ -484,7 +550,33 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 4,
+					"file": "/Users/rcurrie/workspace/bry/client/index.html",
+					"settings":
+					{
+						"buffer_size": 2330,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0,
+						"translation.y": 0,
+						"zoom_level": 1
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
 					"file": "/Users/rcurrie/workspace/bry/server/import.coffee",
 					"settings":
 					{
@@ -495,8 +587,8 @@
 						"selection":
 						[
 							[
-								420,
-								423
+								390,
+								390
 							]
 						],
 						"settings":
@@ -510,50 +602,24 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "/Users/rcurrie/workspace/bry/client/index.html",
+					"buffer": 6,
+					"file": "/Users/rcurrie/Documents/Divorce/divorce_notes.md",
 					"settings":
 					{
-						"buffer_size": 2295,
+						"buffer_size": 16196,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2159,
-								2159
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0,
-						"translation.y": 243,
-						"zoom_level": 1
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "/Users/rcurrie/workspace/bry/client/client.coffee",
-					"settings":
-					{
-						"buffer_size": 3449,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								141,
-								195
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Coffeescript/CoffeeScript.tmLanguage"
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
 						},
 						"translation.x": 0,
 						"translation.y": 0,
@@ -595,13 +661,9 @@
 		]
 	},
 	"menu_visible": true,
-	"output.find_results":
-	{
-		"height": 110
-	},
 	"replace":
 	{
-		"height": 0
+		"height": 62
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -610,12 +672,32 @@
 		"selected_items":
 		[
 			[
-				"run_",
-				"bry/server/run_dev_server.coffee"
+				"imp",
+				"server/import.coffee"
 			],
 			[
-				"imp",
-				"bry/server/import.coffee"
+				"rea",
+				"bry/README.md"
+			],
+			[
+				"inde",
+				"bry/client/index.html"
+			],
+			[
+				"local",
+				"bry/client/lib/backbone.localStorage.js"
+			],
+			[
+				"cli",
+				"bry/client/client.coffee"
+			],
+			[
+				"clien",
+				"bry/client/client.coffee"
+			],
+			[
+				"run_",
+				"bry/server/run_dev_server.coffee"
 			],
 			[
 				"faci",
@@ -1010,7 +1092,7 @@
 	},
 	"show_minimap": true,
 	"show_tabs": true,
-	"side_bar_visible": true,
+	"side_bar_visible": false,
 	"side_bar_width": 270,
 	"status_bar_visible": true
 }

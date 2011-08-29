@@ -9,8 +9,8 @@ FacilityModel = mongoose.model "facility"
 # REMIND: Move into import
 FacilityModel.collection.ensureIndex [[ "loc", "2d"  ]], () -> {}
 
-FacilityModel.collection.indexInformation (error, doc) ->
-  console.log doc
+# FacilityModel.collection.indexInformation (error, doc) ->
+#   console.log doc
 
 FacilityModel.collection.count (err, count) ->
   console.log "#{count} facilities in the database"
@@ -27,8 +27,6 @@ FacilityModel.collection.count (err, count) ->
 # FacilityModel.collection.find query, limit, (error, cursor) ->
 #   cursor.toArray (error, results) ->
 #     render "Found #{results.length} near the center"
-
-
 
 
 http = require 'http'

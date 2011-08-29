@@ -35,26 +35,16 @@ $ ->
 
   #==============================================================================
   # Views
-  # class MapPage extends Backbone.View
-  #   template: _.template($('#facility-list-view-template').html())
-  #   events : {
-  #     "click" : "handleShowFacilityDetail"
-  #   }
-  #   constructor: ->
-  #     super
-  #     _.bindAll(this, 'render');
-  #     @collection.bind 'all', @render
+  class MapPage extends Backbone.View
+    events : {
+      "click a.route-selector" : "handleSelectRoute"
+    }
       
-  #   handleShowFacilityDetail: (e) ->
-  #     facilityDetailView.model = this.collection.getByCid(e.target.getAttribute("data-cid"))
-  #     facilityDetailView.render()
-  #     $.mobile.changePage("#facility-detail-page")
+    handleSelectRoute: (e) ->
+      console.log "switching route"
+      console.log $(e.currentTarget).data("route-num")
       
-  #   render: =>
-  #     @el.html(@template({facilities : @collection}))
-  #     @el.find('ul[data-role]').listview()
-      
-  # mapPage = new MapPage {el: $ "#map-page"}
+  mapPage = new MapPage {el: $ "#map-page"}
 
   class FromToPage extends Backbone.View
     events : {
@@ -64,7 +54,7 @@ $ ->
     gmap = null
     directionsService = null
     directionsDisplay = null
-    
+
     createMap: (e) ->
       # $('#map-canvas').gmap({'callback': @mapCreated()})
       $.mobile.changePage("#map-page")

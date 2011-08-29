@@ -43,10 +43,16 @@
     <a id="get-directions-button" href="#" data-role="button" data-icon="search">Get directions</a>
   </div>
 
-  <div id="map-page" data-role="page">
-    <div data-role="header" data-add-back-btn="true">
+  <div id="map-page" data-role="page" data-add-back-btn="true">
+    <div data-role="header">
       <h1>Breathway</h1>
-    </div>
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#" class="ui-btn-active route-selector" data-route-num="1">One</a></li>
+          <li><a href="#" class="route-selector" data-route-num="2">Two</a></li>
+          <li><a href="#" class="route-selector" data-route-num="3">Three</a></li>
+        </ul>
+      </div>
     <div data-role="content"> 
       <div id="map-canvas" style="height:300px;"></div>
     </div>
