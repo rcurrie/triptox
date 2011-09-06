@@ -4,7 +4,7 @@ config =
   password: '',
   host: 'localhost',
   port: '27017',
-  database: 'bry'
+  database: 'triptox'
 
 # probably don't edit this
 module.exports =

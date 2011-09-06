@@ -1,8 +1,8 @@
-# bry: breathway
+# triptox
 
 HTML5 Mobile app that shows polution emitters on your route
 
-[http://bry.ampdat.com](http://bry.ampdat.com)
+[http://triptox.ampdat.com](http://triptox.ampdat.com)
 
 * On an iOS or Android device, save a bookmark to the desktop to try out offline usage
 * Wrap in phonegap, point www folder to the 'client' folder, build and run
@@ -16,6 +16,12 @@ http://www.facebook.com/event.php?eid=233890659987331
 
 ## Data Source
 http://www.epa.gov/air/emissions/where.htm
+
+## Technologies
+Coffeescript
+Nodejs
+Mondgodb
+Jquery Mobile
 
 ## Running locally
 * Install nodejs

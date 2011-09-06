@@ -1,3 +1,9 @@
+toTitleCase = (str) ->
+  str.replace /\w\S*/g, (txt) ->
+    txt.charAt(0).toUpperCase()+txt.substr(1).toLowerCase()
+
+console.log(toTitleCase("WHEELABRATOR NORWALK"))
+
 # Open the database
 mongoose = require 'mongoose'
 FacilitySchema = require __dirname + '/facility'
@@ -17,8 +23,8 @@ FacilityModel.find (error, facilities) ->
 
   reader.addListener 'data', (row) ->
     facility = new FacilityModel
-      name: row[0]
-      address: row[1]
+      name: toTitleCase(row[0])
+      address: toTitleCase(row[1])
       loc: [parseFloat(row[2]), parseFloat(row[3])]
       sic_code: row[4]
       sic_description : row[5]
@@ -30,13 +36,3 @@ FacilityModel.find (error, facilities) ->
 
     facility.save (err) ->
       console.log "Saved #{row}"
-
-
-
-
-
-
-
-
-
-

@@ -28,21 +28,77 @@ $ ->
           callback()
       }  
 
-  facilities = new FacilityCollection
-  facilities.fetch()
+  # facilities = new FacilityCollection
+  # facilities.fetch()
   # facilities.each (facility) ->
   #   console.log facility
 
   #==============================================================================
   # Views
   class MapPage extends Backbone.View
+    gmap: null
+    markers: []
+
+
     events : {
       "click a.route-selector" : "handleSelectRoute"
     }
-      
+
+    createMap: ->
+      if @gmap is null
+        console.log "Creating map"
+        latlng = new google.maps.LatLng(37.442138, -122.143196)
+        @gmap = new google.maps.Map(document.getElementById("map-canvas"), {zoom: 8, center: latlng, mapTypeId: google.maps.MapTypeId.ROADMAP})
+        @directionsService = new google.maps.DirectionsService()
+        @directionsDisplay = new google.maps.DirectionsRenderer()
+        @directionsDisplay.setMap(@gmap)
+
+
+    getRoutesAndFacilities: (from, to) ->
+      params = { "origin": from, "destination": to, "travelMode": google.maps.DirectionsTravelMode.DRIVING, provideRouteAlternatives: true }
+      @directionsService.route params, (response, status) =>
+        if status is google.maps.DirectionsStatus.OK
+          console.log "Found #{response.routes.length} routes"
+          @routeResponse = response
+          @directionsDisplay.setDirections(response)
+          console.log "Sending routes to server"
+          $.ajax '/routes2facilities',
+            type: 'POST'
+            data: JSON.stringify response.routes
+            dataType: 'html'
+            error: (jqXHR, textStatus, errorThrown) =>
+              console.log "Error sending route to server #{textStatus}"
+            success: (result) =>
+              @facilityLists = JSON.parse result
+              console.log "Received #{@facilityLists.length} lists of facilities"
+              $.mobile.pageLoading true
+              this.displayRoute(0)
+        else
+          console.log "Problems routing: #{status}"
+  
+    displayRoute: (routeNum) ->
+      @directionsDisplay.setRouteIndex(routeNum)
+      console.log "Found #{@facilityLists[routeNum].length} facilities associated with route #{routeNum}"
+      for marker in @markers
+        marker.setMap(null)
+      for facility in @facilityLists[routeNum]
+        do (facility) =>
+          marker = new google.maps.Marker {
+            position: new google.maps.LatLng(facility.loc[0], facility.loc[1])
+            map: @gmap
+            title: facility.name
+            facility: facility }
+          @markers.push(marker)
+          infowindow = new google.maps.InfoWindow {content: facility.name, size: new google.maps.Size(50,50)}
+          google.maps.event.addListener marker, "click", (e) =>
+            # console.log "Clicked on #{this.facility.name}"
+            console.log infowindow
+            infowindow.setContent("Dude")
+            console.log @gmap
+            infowindow.open(@gmap)
+
     handleSelectRoute: (e) ->
-      console.log "switching route"
-      console.log $(e.currentTarget).data("route-num")
+      this.displayRoute($(e.currentTarget).data("route-num"))
       
   mapPage = new MapPage {el: $ "#map-page"}
 
@@ -51,82 +107,14 @@ $ ->
       "click a#get-directions-button" : "createMap"
     }
 
-    gmap = null
-    directionsService = null
-    directionsDisplay = null
-
     createMap: (e) ->
-      # $('#map-canvas').gmap({'callback': @mapCreated()})
       $.mobile.changePage("#map-page")
-      $.mobile.loadingMessage = 'Getting routes...'
+      mapPage.createMap()
+      $.mobile.loadingMessage = 'Routing...'
       $.mobile.pageLoading false
-
-      if gmap
-        console.log "map already exists"
-      else
-        latlng = new google.maps.LatLng(59.3426606750, 18.0736160278);
-        gmap = new google.maps.Map(document.getElementById("map-canvas"), {zoom: 8, center: latlng, mapTypeId: google.maps.MapTypeId.ROADMAP})
-        directionsService = new google.maps.DirectionsService()
-        directionsDisplay = new google.maps.DirectionsRenderer()
-        directionsDisplay.setMap(gmap)
-
-
-    
-      params = { "origin": $("#from").val(), "destination": $("#to").val(), "travelMode": google.maps.DirectionsTravelMode.DRIVING, provideRouteAlternatives: true }
-      console.log params
-      directionsService.route params, (response, status) ->
-        if status is google.maps.DirectionsStatus.OK
-          directionsDisplay.setDirections(response)
-          directionsDisplay.setRouteIndex(1)
-
-          console.log "Found #{response.routes.length} routes"
-          for loc in response.routes[0].overview_path
-            console.log loc
-
-          $.mobile.loadingMessage = 'Analyzing routes...'
-
-          console.log "Sending route to server for analysis"
-          $.ajax '/routes',
-            type: 'POST'
-            data: JSON.stringify response.routes
-            dataType: 'html'
-            error: (jqXHR, textStatus, errorThrown) ->
-              console.log "Error sending route to server #{textStatus}"
-            success: (data) ->
-              console.log "Got data from server based on route"
-              console.log data
-              $.mobile.pageLoading true
-
-        else
-          console.log "Problems getting directions: #{status}"
-
-
+      mapPage.getRoutesAndFacilities($("#from").val(), $("#to").val())
   
   fromToPage = new FromToPage {el: $('#from-to-page')}
       
   #==============================================================================
   # Controllers  
-  # console.log "getting current position"
-  # console.log $("#map-canvas")
-  # $("#map-canvas").gmap "getCurrentPosition", (position, status) ->
-  #   console.log "getCurrentPosition returned"
-  #   if status is "OK"
-  #     console.log "Position appears OK"
-  #     latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
-  #     $("#map-canvas").gmap("get", "map").panTo(latlng)
-  #     $("#map-canvas").gmap "search", { "location": latlng }, (results, status) ->
-  #       if status is "OK"
-  #         $("#from").val(results[0].formatted_address)
-  #   else
-  #     alert("Unable to get current position")
-
-  # $("#map_canvas_1").gmap({"center": "59.3426606750, 18.0736160278"})
-  # $("#submit").click ->
-  #   console.log "got click!"
-  #   $("#map_canvas_1").gmap "displayDirections", { "origin": $("#from").val(), "destination": $("#to").val(), "travelMode": google.maps.DirectionsTravelMode.DRIVING }, { "panel": document.getElementById("directions")}, (response, status) =>
-  #     console.log "got directions response"
-  #     if status is "OK"
-  #       $("#results").show()
-  #     else
-  #       $("#results").hide()
-  #   return false
