@@ -39,7 +39,6 @@ $ ->
     gmap: null
     markers: []
 
-
     events : {
       "click a.route-selector" : "handleSelectRoute"
     }
@@ -47,12 +46,11 @@ $ ->
     createMap: ->
       if @gmap is null
         console.log "Creating map"
-        latlng = new google.maps.LatLng(37.442138, -122.143196)
-        @gmap = new google.maps.Map(document.getElementById("map-canvas"), {zoom: 8, center: latlng, mapTypeId: google.maps.MapTypeId.ROADMAP})
+        $("#map-canvas").height($("#map-page").height() - $("#map-header").height())
+          @gmap = new google.maps.Map(document.getElementById("map-canvas"), {zoom: 8, mapTypeId: google.maps.MapTypeId.ROADMAP})
         @directionsService = new google.maps.DirectionsService()
         @directionsDisplay = new google.maps.DirectionsRenderer()
         @directionsDisplay.setMap(@gmap)
-
 
     getRoutesAndFacilities: (from, to) ->
       params = { "origin": from, "destination": to, "travelMode": google.maps.DirectionsTravelMode.DRIVING, provideRouteAlternatives: true }
