@@ -33,6 +33,7 @@
   <div id="from-to-page" data-role="page">
     <div data-role="header" data-add-back-btn="false">
       <h1>Triptox</h1>
+      <a href="#about-page" data-icon="info" class="ui-btn-right">About</a>
     </div>
     <div data-role="content"> 
       <p>
@@ -50,17 +51,43 @@
   <div id="map-page" class="page-map" data-role="page" data-add-back-btn="true" style="width:100%; height:100%;">
     <div id="map-header" data-role="header">
       <h1>Triptox</h1>
+      <a href="#about-page" data-icon="info" class="ui-btn-right">About</a>
       <div data-role="navbar">
         <ul>
           <li><a href="#" class="ui-btn-active route-selector" data-route-num="0">A</a></li>
           <li><a href="#" class="route-selector" data-route-num="1">B</a></li>
-          <li><a href="#" class="route-selector" data-route-num="2">C</a></li>
+          <li id="foobar"><a href="#" class="route-selector" data-route-num="2">C</a></li>
         </ul>
       </div>
-    <div id="map-content" data-role="content" style="width:100%; height:100%; padding:0;"> 
-      <div id="map-canvas" style="width:100%; height:100%;">Map DIV</div>
     </div>
-    <div id="directions"></div>
+    <div id="map-content" data-role="content" style="width:100%; height:100%; padding:0;"> 
+      <div id="map-canvas" style="width:100%; height:100%;"> </div>
+    </div>
+    <div id="directions"> </div>
+  </div>
+
+  <div id="about-page" data-role="page" data-add-back-btn="true">
+    <div data-role="header">
+      <h1>Triptox</h1>
+    </div>
+    <div data-role="content">  
+      <p>
+        Triptox finds up to three routes as well as the air pollutant emmitters near each route based on the <a href="http://www.epa.gov/air/emissions/where.htm">EPA Air Emission Database</a><p/>
+
+        Written by <a href="mailto:rob@ampdat.com?Subject=Triptox">Rob Currie</a> for fun as part of the <a href="http://www.epa.gov/appsfortheenvironment/">EPA Apps for the Environment challenge</a><p/>
+
+        <b>Issues</b><p/>
+        Only NOX emitters in California are returned, will add rest after prototype is a bit further along.<p/>
+
+        EPA facility entries with exact duplicate locations are counted as separate sites so you may see fewer push-pins then the facility counts on the navigation tabs indicate.<p/>
+
+        Sometimes the list of facilities gets attached to the wrong route...re-route sometimes fixes<p/>
+
+        On trips with less then three routes the extra nav bar button(s) are hidden, not removed...tacky.<p/>
+        <b>Changes</b><p/>
+        Initial release as a proof of concept<br/>
+      </p>  
+    </div>
   </div>
 </body>
 </html>

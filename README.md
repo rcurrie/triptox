@@ -1,6 +1,6 @@
 # triptox
 
-HTML5 Mobile app that shows polution emitters on your route
+HTML5 Mobile app that shows polution emitters on up to three routes
 
 [http://triptox.ampdat.com](http://triptox.ampdat.com)
 
@@ -12,8 +12,6 @@ HTML5 Mobile app that shows polution emitters on your route
 ## Motivation
 http://www.epa.gov/appsfortheenvironment/
 
-http://www.facebook.com/event.php?eid=233890659987331
-
 ## Data Source
 http://www.epa.gov/air/emissions/where.htm
 
@@ -22,14 +20,9 @@ Coffeescript
 Nodejs
 Mondgodb
 Jquery Mobile
-
-## Running locally
-* Install nodejs
-* npm node-static
-* npm coffee-script
-* cd longink/server
-* coffee server.coffee (coffee run_dev_server.coffee if you want auto re-load ala rails)
-* Open a browser to http://localhost:8000
+Backbone
+Underscore
 
 ## ToDo
-* Link off to website with details on the emission, health affects etc...
+* Grey out route selectors if google returns less then 3 routes
+* Add intermediary points to emmiter search if simplifed route segments are very long
