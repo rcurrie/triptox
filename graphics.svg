@@ -457,6 +457,24 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(0,-995.36218)">
+    <path
+       inkscape:export-ydpi="73.839996"
+       inkscape:export-xdpi="73.839996"
+       inkscape:export-filename="/Users/rcurrie/Desktop/rect3873.png"
+       sodipodi:nodetypes="cccccc"
+       inkscape:connector-curvature="0"
+       id="path3080"
+       d="m 89.80542,1012.9708 0.157729,-6.7005 5.3514,0 0,6.408 0,0 0,0.2369"
+       style="fill:none;stroke:#9fa0a0;stroke-width:2.07395148;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4.125;stroke-opacity:0.92888884;stroke-dasharray:none;marker-mid:none" />
+    <path
+       inkscape:export-ydpi="73.839996"
+       inkscape:export-xdpi="73.839996"
+       inkscape:export-filename="/Users/rcurrie/Desktop/rect3873.png"
+       style="fill:none;stroke:#9fa0a0;stroke-width:2.07395148;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4.125;stroke-opacity:0.92888884;stroke-dasharray:none;marker-mid:none"
+       d="m 91.728149,1003.6986 2.469876,-3.84729 -2.538482,-2.1359 2.106317,-3.39233"
+       id="path3082"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc" />
     <rect
        style="fill:#000000;fill-opacity:1;stroke:none"
        id="rect3753"
@@ -467,8 +485,8 @@
        rx="10"
        ry="10"
        inkscape:export-filename="/Users/rcurrie/workspace/triptox/path3904.png"
-       inkscape:export-xdpi="404.20999"
-       inkscape:export-ydpi="404.20999" />
+       inkscape:export-xdpi="202.11"
+       inkscape:export-ydpi="202.11" />
     <rect
        ry="9.8275862"
        rx="9.8275862"
@@ -479,8 +497,8 @@
        id="rect3788"
        style="fill:url(#radialGradient3796);fill-opacity:1;stroke:url(#linearGradient3810);stroke-width:0.98275864"
        inkscape:export-filename="/Users/rcurrie/workspace/triptox/path3904.png"
-       inkscape:export-xdpi="404.20999"
-       inkscape:export-ydpi="404.20999" />
+       inkscape:export-xdpi="202.11"
+       inkscape:export-ydpi="202.11" />
     <image
        y="1083.6682"
        x="-149.01735"
@@ -495,8 +513,8 @@
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccccccc"
        inkscape:export-filename="/Users/rcurrie/workspace/triptox/path3904.png"
-       inkscape:export-xdpi="404.20999"
-       inkscape:export-ydpi="404.20999" />
+       inkscape:export-xdpi="202.11"
+       inkscape:export-ydpi="202.11" />
     <path
        style="fill:none;stroke:#9fa0a0;stroke-width:2.07395148;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4.125;stroke-opacity:0.92888884;stroke-dasharray:none;marker-mid:none"
        d="m 21.35248,1035.884 0.06861,-12.0147 5.3514,0 -0.06861,7.4758"
@@ -504,8 +522,8 @@
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccc"
        inkscape:export-filename="/Users/rcurrie/workspace/triptox/path3904.png"
-       inkscape:export-xdpi="404.20999"
-       inkscape:export-ydpi="404.20999" />
+       inkscape:export-xdpi="202.11"
+       inkscape:export-ydpi="202.11" />
     <path
        style="fill:none;stroke:#9fa0a0;stroke-width:2.07395148;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4.125;stroke-opacity:0.92888884;stroke-dasharray:none;marker-mid:none"
        d="m 32.139806,1035.6837 0,-11.7478 5.3514,0 0,6.408 0,0 0,0.8678"
@@ -513,8 +531,8 @@
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccccc"
        inkscape:export-filename="/Users/rcurrie/workspace/triptox/path3904.png"
-       inkscape:export-xdpi="404.20999"
-       inkscape:export-ydpi="404.20999" />
+       inkscape:export-xdpi="202.11"
+       inkscape:export-ydpi="202.11" />
     <path
        style="fill:none;stroke:#9fa0a0;stroke-width:2.07395148;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4.125;stroke-opacity:0.92888884;stroke-dasharray:none;marker-mid:none"
        d="m 23.46546,1021.3642 2.469876,-3.8473 -2.538482,-2.1359 2.264058,-4.3387"
@@ -522,8 +540,8 @@
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccc"
        inkscape:export-filename="/Users/rcurrie/workspace/triptox/path3904.png"
-       inkscape:export-xdpi="404.20999"
-       inkscape:export-ydpi="404.20999" />
+       inkscape:export-xdpi="202.11"
+       inkscape:export-ydpi="202.11" />
     <path
        sodipodi:nodetypes="cccc"
        inkscape:connector-curvature="0"
@@ -531,8 +549,8 @@
        d="m 33.904806,1021.3642 2.469876,-3.8473 -2.538482,-2.1359 2.264046,-4.3387"
        style="fill:none;stroke:#9fa0a0;stroke-width:2.07395148;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4.125;stroke-opacity:0.92888884;stroke-dasharray:none;marker-mid:none"
        inkscape:export-filename="/Users/rcurrie/workspace/triptox/path3904.png"
-       inkscape:export-xdpi="404.20999"
-       inkscape:export-ydpi="404.20999" />
+       inkscape:export-xdpi="202.11"
+       inkscape:export-ydpi="202.11" />
     <path
        style="fill:none;stroke:#9fa0a0;stroke-width:2.07395148;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4.125;stroke-opacity:0.92888884;stroke-dasharray:none;marker-mid:none"
        d="m 41.127059,1008.0386 7.20381,-8.0527 -4.116468,2e-4"
@@ -540,8 +558,8 @@
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccc"
        inkscape:export-filename="/Users/rcurrie/workspace/triptox/path3904.png"
-       inkscape:export-xdpi="404.20999"
-       inkscape:export-ydpi="404.20999" />
+       inkscape:export-xdpi="202.11"
+       inkscape:export-ydpi="202.11" />
     <path
        sodipodi:nodetypes="cc"
        inkscape:connector-curvature="0"
@@ -549,8 +567,8 @@
        d="m 48.673984,1004.1852 0,-4.1814"
        style="fill:none;stroke:#9fa0a0;stroke-width:2.07395148;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4.125;stroke-opacity:0.92888884;stroke-dasharray:none;marker-mid:none"
        inkscape:export-filename="/Users/rcurrie/workspace/triptox/path3904.png"
-       inkscape:export-xdpi="404.20999"
-       inkscape:export-ydpi="404.20999" />
+       inkscape:export-xdpi="202.11"
+       inkscape:export-ydpi="202.11" />
     <path
        sodipodi:nodetypes="ccc"
        inkscape:connector-curvature="0"
@@ -558,16 +576,16 @@
        d="m 41.192614,1008.0386 -7.203799,-8.0527 4.116444,2e-4"
        style="fill:none;stroke:#9fa0a0;stroke-width:2.07395148;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4.125;stroke-opacity:0.92888884;stroke-dasharray:none;marker-mid:none"
        inkscape:export-filename="/Users/rcurrie/workspace/triptox/path3904.png"
-       inkscape:export-xdpi="404.20999"
-       inkscape:export-ydpi="404.20999" />
+       inkscape:export-xdpi="202.11"
+       inkscape:export-ydpi="202.11" />
     <path
        style="fill:none;stroke:#9fa0a0;stroke-width:2.07395148;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4.125;stroke-opacity:0.92888884;stroke-dasharray:none;marker-mid:none"
        d="m 33.645677,1004.1852 0,-4.1814"
        id="path3904"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc"
-       inkscape:export-xdpi="404.20999"
-       inkscape:export-ydpi="404.20999" />
+       inkscape:export-xdpi="202.11"
+       inkscape:export-ydpi="202.11" />
     <path
        inkscape:export-ydpi="73.839996"
        inkscape:export-xdpi="73.839996"
