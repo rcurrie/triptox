@@ -1,38 +1,38 @@
+csv = require 'ya-csv'
+
+mongo = require "mongodb"
+db = new mongo.Db "triptox", new mongo.Server("localhost", mongo.Connection.DEFAULT_PORT, {}, {native_parser: false})
+
 toTitleCase = (str) ->
   str.replace /\w\S*/g, (txt) ->
     txt.charAt(0).toUpperCase()+txt.substr(1).toLowerCase()
 
-console.log(toTitleCase("WHEELABRATOR NORWALK"))
-
-# Open the database
-mongoose = require 'mongoose'
-FacilitySchema = require __dirname + '/facility'
-config = require __dirname + '/config'
-mongoose.connect config.url
-FacilityModel = mongoose.model 'facility'
-
-# Delete ALL existing entries
-FacilityModel.find (error, facilities) ->
-  console.log "Deleting #{facilities.length} existing facilities in the database"
-  for facility in facilities
-    facility.remove()
-
-  # Read the csv file and create documents for each in mongodb
-  csv = require 'ya-csv'
-  reader = csv.createCsvFileReader '../data/ca.nox.100.csv'
-
-  reader.addListener 'data', (row) ->
-    facility = new FacilityModel
-      name: toTitleCase(row[0])
-      address: toTitleCase(row[1])
-      loc: [parseFloat(row[2]), parseFloat(row[3])]
-      sic_code: row[4]
-      sic_description : row[5]
-      naics_code: row[6]
-      naics_description: row[7]
-      pollutant: row[8]
-      tons: parseFloat(row[9])
-      year: parseInt(row[10])
-
-    facility.save (err) ->
-      console.log "Saved #{row}"
+# Erase the existing database, ingest the facilities csv and create documents for each
+db.open (err, db) ->
+  db.dropDatabase (err, result) ->
+    db.collection "facilities", (err, collection) ->
+      collection.remove {}, (err, result) ->
+        console.log "Deleted all existing facilities"
+        reader = csv.createCsvFileReader 'data/ca.nox.100.csv', { columnsFromHeader: true }
+        reader.addListener 'data', (row) ->
+          # console.log row["Facility Name"]
+          collection.insert
+            name: toTitleCase(row["Facility Name"])
+            address: row["Facility Address"]
+            loc: [parseFloat(row["Latitude"]), parseFloat(row["Longitude"])]
+            sic_code: row["SIC Code"]
+            sic_description : row["SIC Description"]
+            naics_code: row["NAICS Code"]
+            naics_description: row["NAICS Description"]
+            pollutant: row["Pollutant"]
+            tons: parseFloat(row["Emissions in Tons"])
+            year: parseInt(row["Year"])
+        reader.addListener "end", ->
+          collection.count (err, count) ->
+            console.log "Added #{count} facilities"
+            collection.ensureIndex { loc : "2d" }, (err, indexName) ->
+              console.log "Created location index #{indexName}"
+              collection.indexInformation (err, doc) ->
+                console.log "indexInformation: "
+                console.log doc                
+                db.close()

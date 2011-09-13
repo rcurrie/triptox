@@ -52,27 +52,27 @@ exports.GDouglasPeucker = function(source, kink)
                 /* ... yes, so find most deviant intermediate point to
                        either side of line joining start & end points */                                   
             
-            x12 = (source[end].Qa - source[start].Qa);
-            y12 = (source[end].Pa - source[start].Pa);
+            x12 = (source[end][0] - source[start][0]);
+            y12 = (source[end][1] - source[start][1]);
             if (Math.abs(x12) > 180.0) 
                 x12 = 360.0 - Math.abs(x12);
-            x12 *= Math.cos(F * (source[end].Pa + source[start].Pa));/* use avg lat to reduce lng */
+            x12 *= Math.cos(F * (source[end][1] + source[start][1]));/* use avg lat to reduce lng */
             d12 = (x12*x12) + (y12*y12);
 
             for ( i = start + 1, sig = start, max_dev_sqr = -1.0; i < end; i++ ){                                    
 
-                x13 = (source[i].Qa - source[start].Qa);
-                y13 = (source[i].Pa - source[start].Pa);
+                x13 = (source[i][0] - source[start][0]);
+                y13 = (source[i][1] - source[start][1]);
                 if (Math.abs(x13) > 180.0) 
                     x13 = 360.0 - Math.abs(x13);
-                x13 *= Math.cos (F * (source[i].Pa + source[start].Pa));
+                x13 *= Math.cos (F * (source[i][1] + source[start][1]));
                 d13 = (x13*x13) + (y13*y13);
 
-                x23 = (source[i].Qa - source[end].Qa);
-                y23 = (source[i].Pa - source[end].Pa);
+                x23 = (source[i][0] - source[end][0]);
+                y23 = (source[i][1] - source[end][1]);
                 if (Math.abs(x23) > 180.0) 
                     x23 = 360.0 - Math.abs(x23);
-                x23 *= Math.cos(F * (source[i].Pa + source[end].Pa));
+                x23 *= Math.cos(F * (source[i][1] + source[end][1]));
                 d23 = (x23*x23) + (y23*y23);
                                 
                 if ( d13 >= ( d12 + d23 ) )

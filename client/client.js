@@ -46,21 +46,23 @@
           provideRouteAlternatives: true
         };
         return this.directionsService.route(params, __bind(function(response, status) {
+          var routes;
           if (status === google.maps.DirectionsStatus.OK) {
             if (typeof console !== "undefined" && console !== null) {
               console.log("Found " + response.routes.length + " routes");
             }
-            if (typeof console !== "undefined" && console !== null) {
-              console.log(response.routes[0].bounds.toUrlValue());
-            }
-            this.routeResponse = response;
+            routes = response.routes.map(function(i) {
+              return i.overview_path.map(function(j) {
+                return [j.lat(), j.lng()];
+              });
+            });
             this.directionsDisplay.setDirections(response);
             if (typeof console !== "undefined" && console !== null) {
               console.log("Sending routes to server");
             }
             return $.ajax('/routes2facilities', {
               type: 'POST',
-              data: JSON.stringify(response.routes),
+              data: JSON.stringify(routes),
               dataType: 'html',
               error: __bind(function(jqXHR, textStatus, errorThrown) {
                 return typeof console !== "undefined" && console !== null ? console.log("Error sending route to server " + textStatus) : void 0;

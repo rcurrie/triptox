@@ -53,19 +53,17 @@ $ ->
         @directionsDisplay.setMap(@gmap)
         @infowindow = new google.maps.InfoWindow {size: new google.maps.Size(50,50)}
 
-
     getRoutesAndFacilities: (from, to) ->
       params = { "origin": from, "destination": to, "travelMode": google.maps.DirectionsTravelMode.DRIVING, provideRouteAlternatives: true }
       @directionsService.route params, (response, status) =>
         if status is google.maps.DirectionsStatus.OK
           console?.log "Found #{response.routes.length} routes"
-          console?.log response.routes[0].bounds.toUrlValue()
-          @routeResponse = response
+          routes = response.routes.map (i) -> i.overview_path.map (j) -> [j.lat(), j.lng()]
           @directionsDisplay.setDirections(response)
           console?.log "Sending routes to server"
           $.ajax '/routes2facilities',
             type: 'POST'
-            data: JSON.stringify response.routes
+            data: JSON.stringify routes
             dataType: 'html'
             error: (jqXHR, textStatus, errorThrown) =>
               console?.log "Error sending route to server #{textStatus}"
@@ -126,6 +124,3 @@ $ ->
       mapPage.getRoutesAndFacilities($("#from").val(), $("#to").val())
   
   fromToPage = new FromToPage {el: $('#from-to-page')}
-      
-  #==============================================================================
-  # Controllers  

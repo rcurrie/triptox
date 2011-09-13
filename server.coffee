@@ -1,5 +1,5 @@
 _ = require('underscore')._
-mongoose = require "mongoose"
+mongo = require "mongodb"
 sp = require "./simplifyPath"
 
 connect = require 'connect'
@@ -9,20 +9,6 @@ server = connect.createServer()
 server.use connect.static(__dirname + '/client')
 server.use connect.compiler({src: __dirname + '/client', enable: ['coffeescript']})
 server.use connect.errorHandler dumpExceptions: true, showStack: true
-
-# Open the mongodb database
-FacilitySchema = require __dirname + "/facility"
-config = require __dirname + "/config"
-db = mongoose.connect config.url
-FacilityModel = mongoose.model "facility"
-
-# REMIND: Move into import
-FacilityModel.collection.ensureIndex [[ "loc", "2d"  ]], () -> {}
-FacilityModel.collection.indexInformation (error, doc) ->
-  console.log doc
-
-FacilityModel.collection.count (err, count) ->
-  console.log "#{count} facilities in the database"
 
 # Create a router to handle requests
 server.use connect.router (app) ->
@@ -41,28 +27,46 @@ server.use connect.router (app) ->
         do (route) ->
           console.log "Looking for facilities near a route"
           # First simplify the route via line straightening to 5 miles tollerance
-          simplifiedRoute = sp.GDouglasPeucker(route.overview_path, 1 * 1609.344)
-          console.log "Simplified route from #{route.overview_path.length} to #{simplifiedRoute.length} points"
+          simplifiedRoute = sp.GDouglasPeucker(route, 1 * 1609.344)
+          console.log "Simplified route from #{route.length} to #{simplifiedRoute.length} points"
           pointsProcessed = simplifiedRoute.length
+          console.log simplifiedRoute
           facilityList = []
           for point in simplifiedRoute
             do (point) ->
               radius = 2.5 / 69 # 69 miles per degree roughly
-              query = {"loc" : {"\$within" : {"\$center" : [[point.Pa, point.Qa], radius]}}}
+              query = {"loc" : {"\$within" : {"\$center" : [[point[0], point[1]], radius]}}}
+              console.log "Looking around #{point[0]},#{point[1]}"
               limit = {limit: 50, sort: [["_id", -1]] }
-              FacilityModel.collection.find query, limit, (error, cursor) ->
+              server.collection.find query, limit, (error, cursor) ->
                 cursor.toArray (error, results) ->
-                  console.log "Found #{results.length} facilities within #{radius} of #{point.Pa},#{point.Qa}\n"
-                  for facility in results
-                    facilityList.push(facility) unless _.detect(facilityList, (f) -> facility._id.equals(f._id))
-                  pointsProcessed--
-                  if pointsProcessed is 0
-                    console.log "Found a total of #{facilityList.length} uniq facilities"
-                    if facilityLists.push(facilityList) is routes.length
-                      response.writeHead 200, {"Content-Type": "application/json"}
-                      response.write JSON.stringify(facilityLists)
-                      response.end()
+                  if error
+                    console.log "Problems querying for facilities: #{error}"
+                  else if results is null
+                    console.log "Could not fine any facilities"
+                  else
+                    console.log "Found #{results.length} facilities within #{radius} of #{point.Pa},#{point.Qa}\n"
+                    for facility in results
+                      facilityList.push(facility) unless _.detect(facilityList, (f) -> facility._id.equals(f._id))
+                    pointsProcessed--
+                    if pointsProcessed is 0
+                      console.log "Found a total of #{facilityList.length} uniq facilities"
+                      if facilityLists.push(facilityList) is routes.length
+                        response.writeHead 200, {"Content-Type": "application/json"}
+                        response.write JSON.stringify(facilityLists)
+                        response.end()
 
-# Startup the server
-server.listen 3000
-console.log "Server up and listening on port 3000"
+# Open the database and then start the server
+db = new mongo.Db "triptox", new mongo.Server("localhost", mongo.Connection.DEFAULT_PORT, {}, {native_parser: false})
+db.open (err, db) ->
+  db.collection "facilities", (err, collection) ->
+    server.db = db
+    server.collection = collection
+
+    collection.indexInformation (err, doc) ->
+      console.log "indexInformation: "
+      console.log doc                
+
+
+    server.listen 3000
+    console.log "Server up and listening on port 3000"
