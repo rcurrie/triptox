@@ -72,11 +72,14 @@ $ ->
               console?.log "Received #{@facilityLists.length} lists of facilities"
               $.mobile.pageLoading true
               $(".route-selector").each (index, element) =>
+                $(element).removeClass("ui-btn-active")
                 if @facilityLists[index]?
                   $(".ui-btn-text", element).html("#{@facilityLists[index].length}")
                   $(element).show()
                 else
                   $(element).hide()
+              $(".route-selector").first().addClass('ui-btn-active')
+              $('#map-page').page()
               this.displayRoute(0)
         else
           console?.log "Problems routing: #{status}"

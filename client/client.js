@@ -74,6 +74,7 @@
                 }
                 $.mobile.pageLoading(true);
                 $(".route-selector").each(__bind(function(index, element) {
+                  $(element).removeClass("ui-btn-active");
                   if (this.facilityLists[index] != null) {
                     $(".ui-btn-text", element).html("" + this.facilityLists[index].length);
                     return $(element).show();
@@ -81,6 +82,8 @@
                     return $(element).hide();
                   }
                 }, this));
+                $(".route-selector").first().addClass('ui-btn-active');
+                $('#map-page').page();
                 return this.displayRoute(0);
               }, this)
             });
