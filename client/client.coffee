@@ -99,15 +99,14 @@ $ ->
           @markers.push(marker)
           do (marker, facility, @gmap, @infowindow) ->
             google.maps.event.addListener marker, "click", (e) =>
-              content = "<b>#{facility.name}</b><br/>#{facility.pollutant}<br/>#{facility.naics_description}<br/>"
+              content = "<b>#{facility.name}</b><br/>#{Math.round(facility.tons).toString()} tons of #{facility.pollutant}<br/>#{facility.naics_description}<br/>"
               infowindow.setContent(content)
               infowindow.open(@gmap, marker)
             # Add so we get clicks on an android browser? Seems like a hack...
             google.maps.event.addListener marker, "mousedown", (e) =>
-              content = "<b>#{facility.name}</b><br/>#{facility.pollutant}<br/>#{facility.naics_description}<br/>"
+              content = "<b>#{facility.name}</b><br/>#{Math.round(facility.tons).toString()} tons of #{facility.pollutant}<br/>#{facility.naics_description}<br/>"
               infowindow.setContent(content)
               infowindow.open(@gmap, marker)
-
 
     handleSelectRoute: (e) ->
       this.displayRoute($(e.currentTarget).data("route-num"))

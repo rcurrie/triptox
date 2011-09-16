@@ -120,13 +120,13 @@
               this.infowindow = infowindow;
               google.maps.event.addListener(marker, "click", __bind(function(e) {
                 var content;
-                content = "<b>" + facility.name + "</b><br/>" + facility.pollutant + "<br/>" + facility.naics_description + "<br/>";
+                content = "<b>" + facility.name + "</b><br/>" + (Math.round(facility.tons).toString()) + " tons of " + facility.pollutant + "<br/>" + facility.naics_description + "<br/>";
                 infowindow.setContent(content);
                 return infowindow.open(this.gmap, marker);
               }, this));
               return google.maps.event.addListener(marker, "mousedown", __bind(function(e) {
                 var content;
-                content = "<b>" + facility.name + "</b><br/>" + facility.pollutant + "<br/>" + facility.naics_description + "<br/>";
+                content = "<b>" + facility.name + "</b><br/>" + (Math.round(facility.tons).toString()) + " tons of " + facility.pollutant + "<br/>" + facility.naics_description + "<br/>";
                 infowindow.setContent(content);
                 return infowindow.open(this.gmap, marker);
               }, this));
