@@ -76,7 +76,7 @@
                 $(".route-selector").each(__bind(function(index, element) {
                   $(element).removeClass("ui-btn-active");
                   if (this.facilityLists[index] != null) {
-                    $(".ui-btn-text", element).html("" + this.facilityLists[index].length);
+                    $(".ui-btn-text", element).html("Route " + (index + 1) + "<br/>" + this.facilityLists[index].length + " Sites");
                     return $(element).show();
                   } else {
                     return $(element).hide();
@@ -96,7 +96,7 @@
         var facility, marker, _i, _j, _len, _len2, _ref, _ref2, _results;
         this.directionsDisplay.setRouteIndex(routeNum);
         if (typeof console !== "undefined" && console !== null) {
-          console.log("Found " + this.facilityLists[routeNum].length + " facilities associated with route " + routeNum);
+          console.log("Displaying route number " + routeNum + " with " + this.facilityLists[routeNum].length + " facilities");
         }
         _ref = this.markers;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {

@@ -70,18 +70,17 @@
     <div data-role="header">
       <h1>Triptox</h1>
     </div>
-    <div data-role="content">  
-      <p>
+    <div data-role="content" style="inset: 20px;">  
         <center>
           <img src=icon.med.png></img>
         </center>
-        Triptox finds up to three routes as well as the air pollutant emitters near each route based on the <a href="http://www.epa.gov/air/emissions/where.htm">EPA Air Emission Database</a><p/>
+        <p>Triptox finds up to three routes as well as the air pollutant emitters near each route based on the <a href="http://www.epa.gov/air/emissions/where.htm">EPA Air Emission Database</a>. The number of emmiters is listed in the route selector tab.</p>
 
-        Written by <a href="mailto:rob@ampdat.com?Subject=Triptox">Rob Currie</a> for fun as part of the <a href="http://www.epa.gov/appsfortheenvironment/">EPA Apps for the Environment challenge</a><p/>
+        <p>Written by <a href="mailto:rob@ampdat.com?Subject=Triptox">Rob Currie</a> for fun as part of the <a href="http://www.epa.gov/appsfortheenvironment/">EPA Apps for the Environment challenge</a></p>
 
-        Source code available at <a href="https://github.com/robcurrie/triptox">https://github.com/robcurrie/triptox</a><p/>
+        <p>Source code available at <a href="https://github.com/robcurrie/triptox">https://github.com/robcurrie/triptox</a></p>
 
-        <b>Issues</b><p/>
+        <b>Issues</b><br/>
         Only NOX emitters in California are returned, will add rest after prototype is a bit further along.<p/>
 
         EPA facility entries with exact duplicate locations are counted as separate sites so you may see fewer push-pins then the facility counts on the navigation tabs indicate.<p/>
@@ -89,9 +88,11 @@
         Sometimes the list of facilities gets attached to the wrong route...re-route sometimes fixes<p/>
 
         On trips with less then three routes the extra nav bar button(s) are hidden, not removed...tacky.<p/>
-        <b>Changes</b><p/>
-        Initial release as a proof of concept<br/>
-      </p>  
+        
+        <b>Changes</b><br/>
+        09.15.11 Bugs Fixed: Sometimes markers shown were for a different route, route select navbars sometimes were highlighted incorrectly, occasionally a blank route was generated.<p/>
+
+        09.07.11 Initial release as a proof of concept<p/>
     </div>
   </div>
 </body>

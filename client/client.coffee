@@ -74,7 +74,7 @@ $ ->
               $(".route-selector").each (index, element) =>
                 $(element).removeClass("ui-btn-active")
                 if @facilityLists[index]?
-                  $(".ui-btn-text", element).html("#{@facilityLists[index].length}")
+                  $(".ui-btn-text", element).html("Route #{index+1}<br/>#{@facilityLists[index].length} Sites")
                   $(element).show()
                 else
                   $(element).hide()
@@ -86,7 +86,7 @@ $ ->
   
     displayRoute: (routeNum) ->
       @directionsDisplay.setRouteIndex(routeNum)
-      console?.log "Found #{@facilityLists[routeNum].length} facilities associated with route #{routeNum}"
+      console?.log "Displaying route number #{routeNum} with #{@facilityLists[routeNum].length} facilities"
       for marker in @markers
         marker.setMap(null)
       for facility in @facilityLists[routeNum]

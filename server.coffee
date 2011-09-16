@@ -23,47 +23,44 @@ server.use connect.router (app) ->
       body += data
     request.on "end", ->
       routes = JSON.parse body
-      console.log "Found #{routes.length} routes"
-      facilityLists = []
-      routeNum = 0
-      for route in routes
-        routeNum++
-        do (route, routeNum) ->
-          console.log "Looking for facilities near a route"
+      console.log "Server received #{routes.length} routes to process"
+      facilityLists = routes.map (i) -> null # initialize so we know when we have processed all of them
+      for curRoute in [0..routes.length-1]
+        console.log "Processing route number #{curRoute}"
+        do (curRoute) ->
+          route = routes[curRoute]
+          console.log "Looking for facilities near route #{curRoute}"
           # First simplify the route via line straightening to 5 miles tollerance
           simplifiedRoute = sp.GDouglasPeucker(route, 1 * 1609.344)
           console.log "Simplified route from #{route.length} to #{simplifiedRoute.length} points"
-          pointsProcessed = simplifiedRoute.length
+          pointsProcessed = 0
           console.log simplifiedRoute
           facilityList = []
           for point in simplifiedRoute
-            do (point) ->
+            do (point, facilityList, facilityLists) ->
               radius = 2.5 / 69 # 69 miles per degree roughly
               query = {"loc" : {"\$within" : {"\$center" : [[point[0], point[1]], radius]}}}
-              console.log "Looking around #{point[0]},#{point[1]}"
+              # console.log "Looking around #{point[0]},#{point[1]}"
               limit = {limit: 50, sort: [["_id", -1]] }
               server.collection.find query, limit, (error, cursor) ->
                 cursor.toArray (error, results) ->
                   if error
-                    console.log "Problems querying for facilities: #{error}"
+                    console.log "Problems querying for facilities around #{point[0]},#{point[1]}: #{error}"
                   else if results is null
-                    console.log "Could not fine any facilities"
+                    console.log "Could not find any facilities around around #{point[0]},#{point[1]}"
                   else
                     console.log "Found #{results.length} facilities within #{radius} of #{point[0]},#{point[1]}\n"
                     for facility in results
                       facilityList.push(facility) unless _.detect(facilityList, (f) -> facility._id.equals(f._id))
-                    pointsProcessed--
-                    if pointsProcessed is 0
-                      console.log "Found a total of #{facilityList.length} uniq facilities"
-                      facilityLists[routeNum-1] = facilityList
-                      if routeNum is routes.length
-                      # if facilityLists.push(facilityList) is routes.length
+                    pointsProcessed++
+                    if pointsProcessed is simplifiedRoute.length
+                      console.log "Found a total of #{facilityList.length} uniq facilities for route #{curRoute}"
+                      facilityLists[curRoute] = facilityList
+                      if _.every(facilityLists, (f) -> f)
+                        console.log "Finished processing all routes"
                         response.writeHead 200, {"Content-Type": "application/json"}
                         response.write JSON.stringify(facilityLists)
                         response.end()
-
-                        for l in facilityLists
-                          console.log l[0].name
 
 # Open the database and then start the server
 db = new mongo.Db "triptox", new mongo.Server("localhost", mongo.Connection.DEFAULT_PORT, {}, {native_parser: false})
