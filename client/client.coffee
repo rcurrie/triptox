@@ -51,7 +51,7 @@ $ ->
         @directionsService = new google.maps.DirectionsService()
         @directionsDisplay = new google.maps.DirectionsRenderer()
         @directionsDisplay.setMap(@gmap)
-        @infowindow = new google.maps.InfoWindow {size: new google.maps.Size(50,50)}
+        @infowindow = new google.maps.InfoWindow {size: new google.maps.Size(100,100)}
 
     getRoutesAndFacilities: (from, to) ->
       params = { "origin": from, "destination": to, "travelMode": google.maps.DirectionsTravelMode.DRIVING, provideRouteAlternatives: true }
@@ -99,12 +99,12 @@ $ ->
           @markers.push(marker)
           do (marker, facility, @gmap, @infowindow) ->
             google.maps.event.addListener marker, "click", (e) =>
-              content = "<b>#{facility.name}</b><br/>#{facility.naics_description}<br/>#{facility.pollutant}<br/>"
+              content = "<b>#{facility.name}</b><br/>#{facility.pollutant}<br/>#{facility.naics_description}<br/>"
               infowindow.setContent(content)
               infowindow.open(@gmap, marker)
             # Add so we get clicks on an android browser? Seems like a hack...
             google.maps.event.addListener marker, "mousedown", (e) =>
-              content = "<b>#{facility.name}</b><br/>#{facility.naics_description}<br/>#{facility.pollutant}<br/>"
+              content = "<b>#{facility.name}</b><br/>#{facility.pollutant}<br/>#{facility.naics_description}<br/>"
               infowindow.setContent(content)
               infowindow.open(@gmap, marker)
 

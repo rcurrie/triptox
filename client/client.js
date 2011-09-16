@@ -33,7 +33,7 @@
           this.directionsDisplay = new google.maps.DirectionsRenderer();
           this.directionsDisplay.setMap(this.gmap);
           return this.infowindow = new google.maps.InfoWindow({
-            size: new google.maps.Size(50, 50)
+            size: new google.maps.Size(100, 100)
           });
         }
       };
@@ -120,13 +120,13 @@
               this.infowindow = infowindow;
               google.maps.event.addListener(marker, "click", __bind(function(e) {
                 var content;
-                content = "<b>" + facility.name + "</b><br/>" + facility.naics_description + "<br/>" + facility.pollutant + "<br/>";
+                content = "<b>" + facility.name + "</b><br/>" + facility.pollutant + "<br/>" + facility.naics_description + "<br/>";
                 infowindow.setContent(content);
                 return infowindow.open(this.gmap, marker);
               }, this));
               return google.maps.event.addListener(marker, "mousedown", __bind(function(e) {
                 var content;
-                content = "<b>" + facility.name + "</b><br/>" + facility.naics_description + "<br/>" + facility.pollutant + "<br/>";
+                content = "<b>" + facility.name + "</b><br/>" + facility.pollutant + "<br/>" + facility.naics_description + "<br/>";
                 infowindow.setContent(content);
                 return infowindow.open(this.gmap, marker);
               }, this));

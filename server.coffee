@@ -30,8 +30,8 @@ server.use connect.router (app) ->
         do (curRoute) ->
           route = routes[curRoute]
           console.log "Looking for facilities near route #{curRoute}"
-          # First simplify the route via line straightening to 5 miles tollerance
-          simplifiedRoute = sp.GDouglasPeucker(route, 1 * 1609.344)
+          # First simplify the route via line straightening to n miles tollerance
+          simplifiedRoute = sp.GDouglasPeucker(route, 0.5 * 1609.344)
           console.log "Simplified route from #{route.length} to #{simplifiedRoute.length} points"
           pointsProcessed = 0
           console.log simplifiedRoute
